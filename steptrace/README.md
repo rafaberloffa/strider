@@ -1,4 +1,4 @@
-# StepTrace
+# Strider
 
 > Ferramenta desktop para **Windows** que grava sessões de navegação entre janelas,
 > capturando screenshots da janela ativa a cada mudança de foco — com anotações,
@@ -10,7 +10,7 @@
 ![Stack: Rust + Tauri 2 + React](https://img.shields.io/badge/stack-Rust%20%2B%20Tauri%202%20%2B%20React-orange)
 
 <!-- TODO: substituir por screenshot real após build final -->
-<!-- ![StepTrace](./docs/screenshot.png) -->
+<!-- ![Strider](./docs/screenshot.png) -->
 
 ---
 
@@ -21,10 +21,10 @@ para um agente de IA), o ideal é ter uma trilha de screenshots **contextualizad
 cada janela que foi aberta, em ordem, com timestamps, nome do processo, anotações
 e destaque de onde você clicou.
 
-O StepTrace gera exatamente isso, com zero atrito:
+O Strider gera exatamente isso, com zero atrito:
 
 1. Você aperta `Win+Shift+R` e começa a trabalhar normalmente.
-2. A cada mudança de janela, o StepTrace captura **só aquela janela** (não a tela toda).
+2. A cada mudança de janela, o Strider captura **só aquela janela** (não a tela toda).
 3. Você aperta `Win+Shift+S` para parar.
 4. Exporta como `.md` com as imagens embutidas em base64 → cola direto no ChatGPT /
    Claude / Cursor e pronto.
@@ -33,7 +33,7 @@ O StepTrace gera exatamente isso, com zero atrito:
 
 ## O que esta ferramenta **NÃO** faz
 
-StepTrace foi desenhado para ser **seguro de instalar**. Ele não:
+Strider foi desenhado para ser **seguro de instalar**. Ele não:
 
 - ❌ **Não registra teclas digitadas.** Nenhum `WH_KEYBOARD_LL`, nenhum keylogger.
   Apenas `RegisterHotKey` do Windows (as 4 combinações configuradas).
@@ -45,7 +45,7 @@ StepTrace foi desenhado para ser **seguro de instalar**. Ele não:
   *opt-in* e cada trecho detectado pede confirmação explícita via toast antes
   de ser salvo.
 
-Tudo fica em disco em `%APPDATA%\com.steptrace.app\StepTrace\sessions\`.
+Tudo fica em disco em `%APPDATA%\com.strider.app\Strider\sessions\`.
 
 ---
 
@@ -92,7 +92,7 @@ Disponíveis na tela de configurações (ícone de engrenagem):
 ### Binário pré-compilado
 
 <!-- TODO: após primeiro release público, incluir link de download
-Baixe o último `.exe` em **[Releases](https://github.com/SEU-USUARIO/steptrace/releases)**.
+Baixe o último `.exe` em **[Releases](https://github.com/SEU-USUARIO/strider/releases)**.
 -->
 
 > ⚠ Ainda sem release público. Compile localmente (veja abaixo).
@@ -107,7 +107,7 @@ Baixe o último `.exe` em **[Releases](https://github.com/SEU-USUARIO/steptrace/
 
 ```powershell
 git clone <repo-url>
-cd steptrace
+cd strider
 npm install
 npm run tauri dev          # desenvolvimento (hot reload)
 npm run tauri build        # gera .exe em src-tauri\target\release\bundle\
@@ -151,7 +151,7 @@ O bundle gera um instalador `.msi` / `.exe` em
 ## Persistência
 
 ```
-%APPDATA%\com.steptrace.app\StepTrace\
+%APPDATA%\com.strider.app\Strider\
 ├── config.json
 └── sessions\
     └── sess_20260420_182400\
@@ -183,4 +183,4 @@ MIT — veja [`LICENSE`](./LICENSE).
 
 ---
 
-*StepTrace — construído para quem precisa explicar fluxos sem abrir a boca.*
+*Strider — construído para quem precisa explicar fluxos sem abrir a boca.*
