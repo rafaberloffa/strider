@@ -5,7 +5,7 @@
 > destaque de regiões e exportação em **Markdown** e **PDF** otimizados para leitura por
 > agentes de IA.
 
-![License: MIT](https://img.shields.io/badge/license-MIT-blue)
+![License: GPLv3](https://img.shields.io/badge/license-GPLv3-blue)
 ![Platform: Windows 10/11](https://img.shields.io/badge/platform-Windows%2010%2F11-0078D4)
 ![Stack: Rust + Tauri 2 + React](https://img.shields.io/badge/stack-Rust%20%2B%20Tauri%202%20%2B%20React-orange)
 
@@ -179,7 +179,7 @@ Cada sessão é autocontida. Apagar a pasta `sess_*` apaga tudo daquela gravaç�
 
 ## Licença
 
-MIT — veja [`LICENSE`](./LICENSE).
+GPLv3 — veja [`LICENSE`](./LICENSE).
 
 ---
 
