@@ -133,6 +133,8 @@ pub struct AppConfig {
     pub embed_images_default: bool,
     pub export_name_template: String,
     pub auto_purge_hours: u32,
+    #[serde(default)]
+    pub language: Option<String>,
 }
 
 impl Default for AppConfig {
@@ -147,8 +149,9 @@ impl Default for AppConfig {
             image_quality: "high".to_string(),
             default_export_format: "markdown".to_string(),
             embed_images_default: true,
-            export_name_template: "steptrace_{yyyy}-{MM}-{dd}_{HH}{mm}".to_string(),
+            export_name_template: "strider_{yyyy}-{MM}-{dd}_{HH}{mm}".to_string(),
             auto_purge_hours: 1,
+            language: None,
         }
     }
 }

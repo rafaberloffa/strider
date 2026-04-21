@@ -9,6 +9,7 @@ import {
 } from '@fluentui/react-icons';
 import { invoke } from '@tauri-apps/api/core';
 import { listen } from '@tauri-apps/api/event';
+import { useTranslation } from 'react-i18next';
 import { StatusBadge } from './components/StatusBadge';
 import { ReviewPanel } from './components/ReviewPanel';
 import { ExportDialog } from './components/ExportDialog';
@@ -24,6 +25,7 @@ import './App.css';
 type View = 'home' | 'review' | 'settings';
 
 export default function App() {
+  const { t, i18n } = useTranslation();
   const {
     status, session, steps, sessionsDir, config, recentSessions,
     startRecording, pauseRecording, resumeRecording, stopRecording,
@@ -31,6 +33,10 @@ export default function App() {
     addHighlight, setSpotlight, cropStepImage, captureNow,
     loadSession, deleteSession, saveConfig, loadRecentSessions, clearSession,
   } = useSession();
+
+  useEffect(() => {
+    if (config?.language) i18n.changeLanguage(config.language);
+  }, [config?.language]);
 
   const [view, setView] = useState<View>('home');
   const [exportOpen, setExportOpen] = useState(false);
@@ -58,12 +64,11 @@ export default function App() {
 
   useEffect(() => {
     const un = listen<string>('capture-blocked', e => {
-      toast('error', 'Captura não realizada', e.payload);
+      toast('error', t('toasts.capture_blocked_title'), e.payload);
     });
     return () => { un.then(fn => fn()); };
-  }, []);
+  }, [t]);
 
-  // Auto navigate to review when session stops
   useEffect(() => {
     if (status === 'idle' && session?.ended_at && steps.length > 0 && view === 'home') {
       setView('review');
@@ -81,7 +86,7 @@ export default function App() {
       setCaptureFlash(true);
       setTimeout(() => setCaptureFlash(false), 350);
     } else {
-      toast('error', 'Captura não realizada', 'Alterne para a janela alvo e tente novamente.');
+      toast('error', t('toasts.capture_blocked_title'), t('toasts.capture_blocked_body'));
     }
   };
 
@@ -92,7 +97,7 @@ export default function App() {
 
   const handleDeleteSession = async (id: string) => {
     await deleteSession(id);
-    toast('success', 'Sessão apagada');
+    toast('success', t('toasts.session_deleted'));
   };
 
   const openSessionsFolder = () => invoke('open_sessions_folder').catch(e => toast('error', String(e)));
@@ -108,11 +113,11 @@ export default function App() {
               icon={<FolderOpen20Regular />}
               onClick={() => invoke('open_path', { path: outputDir })}
             >
-              Abrir pasta
+              {t('toasts.open_folder')}
             </Button>
           }
         >
-          Exportação concluída
+          {t('toasts.export_done')}
         </ToastTitle>
         <ToastBody>
           <Text size={100} style={{ fontFamily: 'monospace' }}>
@@ -136,36 +141,36 @@ export default function App() {
         <div style={{ flex: 1 }} />
 
         {status === 'idle' && view === 'home' && (
-          <Tooltip content="Iniciar gravação  ·  Win+Shift+R" relationship="label" withArrow>
-            <ToolbarButton icon={<Record24Regular />} onClick={startRecording}>Iniciar</ToolbarButton>
+          <Tooltip content={t('toolbar.start_tooltip')} relationship="label" withArrow>
+            <ToolbarButton icon={<Record24Regular />} onClick={startRecording}>{t('session.start')}</ToolbarButton>
           </Tooltip>
         )}
         {status === 'recording' && (
           <>
-            <Tooltip content="Capturar agora  ·  Win+Shift+C" relationship="label" withArrow>
+            <Tooltip content={t('toolbar.capture_tooltip')} relationship="label" withArrow>
               <ToolbarButton
                 icon={<Camera24Regular />}
-                className={captureFlash ? 'steptrace-capture-flash' : undefined}
+                className={captureFlash ? 'strider-capture-flash' : undefined}
                 onClick={handleCaptureNow}
               >
-                Capturar
+                {t('session.capture_now')}
               </ToolbarButton>
             </Tooltip>
-            <Tooltip content="Pausar  ·  Win+Shift+P" relationship="label" withArrow>
-              <ToolbarButton icon={<Pause24Regular />} onClick={pauseRecording}>Pausar</ToolbarButton>
+            <Tooltip content={t('toolbar.pause_tooltip')} relationship="label" withArrow>
+              <ToolbarButton icon={<Pause24Regular />} onClick={pauseRecording}>{t('session.pause')}</ToolbarButton>
             </Tooltip>
-            <Tooltip content="Parar gravação  ·  Win+Shift+S" relationship="label" withArrow>
-              <ToolbarButton icon={<Stop24Regular />} onClick={handleStop}>Parar</ToolbarButton>
+            <Tooltip content={t('toolbar.stop_tooltip')} relationship="label" withArrow>
+              <ToolbarButton icon={<Stop24Regular />} onClick={handleStop}>{t('session.stop')}</ToolbarButton>
             </Tooltip>
           </>
         )}
         {status === 'paused' && (
           <>
-            <Tooltip content="Retomar  ·  Win+Shift+P" relationship="label" withArrow>
-              <ToolbarButton icon={<Record24Regular />} onClick={resumeRecording}>Retomar</ToolbarButton>
+            <Tooltip content={t('toolbar.resume_tooltip')} relationship="label" withArrow>
+              <ToolbarButton icon={<Record24Regular />} onClick={resumeRecording}>{t('session.resume')}</ToolbarButton>
             </Tooltip>
-            <Tooltip content="Parar gravação  ·  Win+Shift+S" relationship="label" withArrow>
-              <ToolbarButton icon={<Stop24Regular />} onClick={handleStop}>Parar</ToolbarButton>
+            <Tooltip content={t('toolbar.stop_tooltip')} relationship="label" withArrow>
+              <ToolbarButton icon={<Stop24Regular />} onClick={handleStop}>{t('session.stop')}</ToolbarButton>
             </Tooltip>
           </>
         )}
@@ -175,15 +180,15 @@ export default function App() {
             onClick={() => { clearSession(); setView('home'); loadRecentSessions(); }}
             style={{ marginLeft: 4 }}
           >
-            ← Voltar
+            {t('session.back')}
           </Button>
         )}
         {view === 'home' && status === 'idle' && (
           <>
-            <Tooltip content="Abrir pasta de sessões" relationship="label" withArrow>
+            <Tooltip content={t('toolbar.open_folder_tooltip')} relationship="label" withArrow>
               <ToolbarButton icon={<Folder24Regular />} onClick={openSessionsFolder} />
             </Tooltip>
-            <Tooltip content="Configurações" relationship="label" withArrow>
+            <Tooltip content={t('toolbar.settings_tooltip')} relationship="label" withArrow>
               <ToolbarButton icon={<Settings24Regular />} onClick={() => setView('settings')} />
             </Tooltip>
           </>
@@ -198,12 +203,12 @@ export default function App() {
             paddingTop: 32, gap: 24,
           }}>
             <div style={{ textAlign: 'center' }}>
-              <Text size={600} weight="semibold">StepTrace</Text>
+              <Text size={600} weight="semibold">{t('app.name')}</Text>
               <br />
               <Text size={300} style={{ color: 'var(--colorNeutralForeground3)' }}>
                 {status === 'idle'
-                  ? 'Clique em Iniciar ou pressione Win+Shift+R para gravar.'
-                  : `${status === 'recording' ? '● Gravando' : '⏸ Pausado'} — ${steps.length} passo${steps.length !== 1 ? 's' : ''}.`}
+                  ? t('home.tagline')
+                  : `${status === 'recording' ? t('home.status_recording') : t('home.status_paused')} — ${steps.length === 1 ? t('home.live_step_count_one') : t('home.live_step_count_other', { count: steps.length })}`}
               </Text>
             </div>
 
@@ -226,14 +231,14 @@ export default function App() {
                   )}
                   <Text size={200} style={{ color: 'var(--colorNeutralForeground3)' }}>
                     {status === 'recording'
-                      ? 'Aguardando próxima mudança de foco...'
-                      : 'Captura pausada. Retome para continuar.'}
+                      ? t('home.waiting')
+                      : t('home.paused_hint')}
                   </Text>
                 </div>
                 {lastStep && (
                   <div
                     key={lastStep.id}
-                    className="steptrace-fadein"
+                    className="strider-fadein"
                     style={{
                       width: '100%', marginTop: 4,
                       display: 'flex', flexDirection: 'column', gap: 2,
@@ -241,7 +246,7 @@ export default function App() {
                     }}
                   >
                     <Text size={200} weight="semibold">
-                      Último passo: #{lastStep.sequence}
+                      {t('home.last_step', { seq: lastStep.sequence })}
                     </Text>
                     <Text size={100} style={{ color: 'var(--colorNeutralForeground3)' }}>
                       {lastStep.process_name} — {lastStep.window_title.slice(0, 80)}
@@ -280,7 +285,7 @@ export default function App() {
             config={config}
             onSave={async cfg => {
               await saveConfig(cfg);
-              toast('success', 'Configurações salvas');
+              toast('success', t('toasts.settings_saved'));
               setView('home');
             }}
             onBack={() => setView('home')}
@@ -313,7 +318,7 @@ export default function App() {
           template={config.export_name_template}
           defaultEmbed={config.embed_images_default}
           onDone={handleExportDone}
-          onError={msg => toast('error', 'Falha na exportação', msg)}
+          onError={msg => toast('error', t('toasts.export_failed'), msg)}
         />
       )}
     </div>

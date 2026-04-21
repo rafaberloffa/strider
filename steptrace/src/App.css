@@ -8,32 +8,32 @@ body {
   overflow: hidden;
 }
 
-@keyframes steptrace-pulse {
+@keyframes strider-pulse {
   0%   { box-shadow: 0 0 0 0 rgba(232, 17, 35, 0.55); }
   70%  { box-shadow: 0 0 0 8px rgba(232, 17, 35, 0); }
   100% { box-shadow: 0 0 0 0 rgba(232, 17, 35, 0); }
 }
 
-.steptrace-recording-badge {
-  animation: steptrace-pulse 1.8s infinite;
+.strider-recording-badge {
+  animation: strider-pulse 1.8s infinite;
   border-radius: 999px;
 }
 
-@keyframes steptrace-fadein {
+@keyframes strider-fadein {
   from { opacity: 0; transform: translateY(4px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-.steptrace-fadein {
-  animation: steptrace-fadein 0.22s ease-out;
+.strider-fadein {
+  animation: strider-fadein 0.22s ease-out;
 }
 
-@keyframes steptrace-capture-flash {
+@keyframes strider-capture-flash {
   0%   { opacity: 1; }
   50%  { opacity: 0.35; }
   100% { opacity: 1; }
 }
 
-.steptrace-capture-flash {
-  animation: steptrace-capture-flash 0.35s ease-out;
+.strider-capture-flash {
+  animation: strider-capture-flash 0.35s ease-out;
 }

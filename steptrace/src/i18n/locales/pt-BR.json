@@ -1,0 +1,156 @@
+{
+  "app": {
+    "name": "Strider"
+  },
+  "status": {
+    "idle": "Pronto",
+    "recording": "● Gravando",
+    "paused": "⏸ Pausado"
+  },
+  "session": {
+    "start": "Iniciar",
+    "pause": "Pausar",
+    "resume": "Retomar",
+    "stop": "Parar",
+    "capture_now": "Capturar",
+    "back": "← Voltar",
+    "step_singular": "passo",
+    "step_plural": "passos",
+    "step_count": "{{count}} passo",
+    "step_count_plural": "{{count}} passos"
+  },
+  "toolbar": {
+    "start_tooltip": "Iniciar gravação  ·  Win+Shift+R",
+    "capture_tooltip": "Capturar agora  ·  Win+Shift+C",
+    "pause_tooltip": "Pausar  ·  Win+Shift+P",
+    "stop_tooltip": "Parar gravação  ·  Win+Shift+S",
+    "resume_tooltip": "Retomar  ·  Win+Shift+P",
+    "open_folder_tooltip": "Abrir pasta de sessões",
+    "settings_tooltip": "Configurações"
+  },
+  "home": {
+    "tagline": "Clique em Iniciar ou pressione Win+Shift+R para gravar.",
+    "status_recording": "● Gravando",
+    "status_paused": "⏸ Pausado",
+    "live_step_count_one": "1 passo capturado",
+    "live_step_count_other": "{{count}} passos capturados",
+    "waiting": "Aguardando próxima mudança de foco...",
+    "paused_hint": "Captura pausada. Retome para continuar.",
+    "last_step": "Último passo: #{{seq}}"
+  },
+  "review": {
+    "title": "Revisão da Sessão",
+    "step_count": "{{count}} passo",
+    "step_count_plural": "{{count}} passos",
+    "duration": "{{min}}min {{sec}}s",
+    "export": "Exportar",
+    "export_disabled_title": "Sem passos para exportar",
+    "export_title": "Exportar sessão",
+    "empty_title": "Nenhum passo capturado",
+    "empty_hint": "Nenhuma mudança de foco foi detectada nesta sessão. Inicie uma nova gravação (Win+Shift+R) e alterne entre janelas para capturar passos."
+  },
+  "export": {
+    "title": "Exportar sessão (Markdown)",
+    "embed_images": "Embutir imagens em base64 (recomendado para IA)",
+    "filename_label": "Nome do arquivo (sem extensão)",
+    "filename_placeholder": "meu_export",
+    "folder_label": "Pasta de destino",
+    "folder_placeholder": "Clique em Escolher...",
+    "choose_folder": "Escolher...",
+    "choose_folder_dialog": "Escolha a pasta de destino",
+    "cancel": "Cancelar",
+    "exporting": "Exportando...",
+    "export": "Exportar",
+    "error_no_folder": "Escolha uma pasta de destino.",
+    "error_no_filename": "Informe o nome do arquivo."
+  },
+  "settings": {
+    "title": "Configurações",
+    "sessions_dir_label": "Pasta de sessões",
+    "sessions_dir_open": "Abrir",
+    "export_template_label": "Template de nome para exportação",
+    "export_template_hint": "Placeholders: {yyyy} {MM} {dd} {HH} {mm} {ss}",
+    "auto_purge_label": "Auto-remover sessões após (horas, 0 = nunca)",
+    "image_quality_label": "Qualidade da imagem",
+    "quality_high": "Alta",
+    "quality_medium": "Média",
+    "quality_low": "Baixa",
+    "embed_images_label": "Embutir imagens em base64 por padrão no Markdown",
+    "hotkeys_label": "Hotkeys",
+    "hotkeys_display": "Iniciar: {{start}} · Pausar: {{pause}} · Parar: {{stop}} · Anotar: {{annotate}} · Capturar: {{capture}}",
+    "language_label": "Idioma",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "restore_defaults": "Restaurar padrões"
+  },
+  "stepcard": {
+    "click_badge": "clique",
+    "mark_point_hint": "Clique na imagem...",
+    "mark_point": "Marcar ponto",
+    "spotlight_hint": "Arraste para selecionar...",
+    "spotlight": "Spotlight",
+    "remove_spotlight": "Remover spotlight",
+    "crop_hint": "Arraste para recortar...",
+    "crop": "Recortar imagem",
+    "delete": "Remover passo",
+    "log_header": "📋 Log · {{timestamp}}",
+    "remove_log": "Remover log",
+    "log_note_placeholder": "Nota sobre este log...",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "edit_note": "Editar nota",
+    "add_note": "Adicionar nota",
+    "annotation_placeholder": "Adicione uma anotação...",
+    "clear": "Limpar",
+    "edit": "Editar",
+    "annotate": "Anotar"
+  },
+  "live_feed": {
+    "title": "Captura ao vivo",
+    "step_count_one": "1 passo",
+    "step_count_other": "{{count}} passos",
+    "waiting": "Aguardando próxima mudança de janela..."
+  },
+  "sessions_list": {
+    "title": "Sessões recentes",
+    "empty": "Nenhuma sessão salva. (sessões são apagadas após o tempo configurado)",
+    "step_count": "{{count}} passos",
+    "open": "Abrir",
+    "delete": "Apagar"
+  },
+  "step_preview": {
+    "title": "Passo #{{seq}}",
+    "alt": "Passo {{seq}}"
+  },
+  "toasts": {
+    "capture_blocked_title": "Captura não realizada",
+    "capture_blocked_body": "Alterne para a janela alvo e tente novamente.",
+    "session_deleted": "Sessão apagada",
+    "export_done": "Exportação concluída",
+    "open_folder": "Abrir pasta",
+    "export_failed": "Falha na exportação",
+    "settings_saved": "Configurações salvas"
+  },
+  "language": {
+    "selector_label": "Idioma",
+    "en": "English",
+    "pt-BR": "Português (Brasil)",
+    "es": "Español",
+    "ru": "Русский",
+    "it": "Italiano",
+    "de": "Deutsch",
+    "ja": "日本語",
+    "zh-CN": "中文 (简体)",
+    "fr": "Français"
+  },
+  "errors": {
+    "no_active_session": "Nenhuma sessão ativa",
+    "session_already_active": "Sessão já em andamento",
+    "session_not_recording": "Sessão não está gravando",
+    "session_not_paused": "Sessão não está pausada",
+    "step_not_found": "Passo não encontrado",
+    "not_recording": "Não está gravando",
+    "no_foreground_window": "Nenhuma janela alvo encontrada. Alterne para a janela desejada primeiro.",
+    "pdf_removed": "Exportação PDF foi removida. Use Markdown."
+  }
+}

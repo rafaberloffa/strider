@@ -1,0 +1,97 @@
+{
+  "app": { "name": "Strider" },
+  "status": { "idle": "Prêt", "recording": "● Enregistrement", "paused": "⏸ Suspendu" },
+  "session": {
+    "start": "Démarrer", "pause": "Pause", "resume": "Reprendre", "stop": "Arrêter",
+    "capture_now": "Capturer", "back": "← Retour",
+    "step_singular": "étape", "step_plural": "étapes",
+    "step_count": "{{count}} étape", "step_count_plural": "{{count}} étapes"
+  },
+  "toolbar": {
+    "start_tooltip": "Démarrer l'enregistrement  ·  Win+Shift+R",
+    "capture_tooltip": "Capturer maintenant  ·  Win+Shift+C",
+    "pause_tooltip": "Pause  ·  Win+Shift+P",
+    "stop_tooltip": "Arrêter l'enregistrement  ·  Win+Shift+S",
+    "resume_tooltip": "Reprendre  ·  Win+Shift+P",
+    "open_folder_tooltip": "Ouvrir le dossier des sessions",
+    "settings_tooltip": "Paramètres"
+  },
+  "home": {
+    "tagline": "Cliquez sur Démarrer ou appuyez sur Win+Shift+R pour enregistrer.",
+    "status_recording": "● Enregistrement", "status_paused": "⏸ Suspendu",
+    "live_step_count_one": "1 étape capturée", "live_step_count_other": "{{count}} étapes capturées",
+    "waiting": "En attente du prochain changement de fenêtre...",
+    "paused_hint": "Capture suspendue. Reprenez pour continuer.",
+    "last_step": "Dernière étape : #{{seq}}"
+  },
+  "review": {
+    "title": "Révision de session",
+    "step_count": "{{count}} étape", "step_count_plural": "{{count}} étapes",
+    "duration": "{{min}}min {{sec}}s",
+    "export": "Exporter", "export_disabled_title": "Aucune étape à exporter",
+    "export_title": "Exporter la session",
+    "empty_title": "Aucune étape capturée",
+    "empty_hint": "Aucun changement de focus n'a été détecté dans cette session. Démarrez un nouvel enregistrement (Win+Shift+R) et changez de fenêtre pour capturer des étapes."
+  },
+  "export": {
+    "title": "Exporter la session (Markdown)",
+    "embed_images": "Incorporer les images en base64 (recommandé pour l'IA)",
+    "filename_label": "Nom du fichier (sans extension)",
+    "filename_placeholder": "mon_export",
+    "folder_label": "Dossier de destination", "folder_placeholder": "Cliquez sur Choisir...",
+    "choose_folder": "Choisir...", "choose_folder_dialog": "Choisir le dossier de destination",
+    "cancel": "Annuler", "exporting": "Exportation...", "export": "Exporter",
+    "error_no_folder": "Choisissez un dossier de destination.",
+    "error_no_filename": "Saisissez un nom de fichier."
+  },
+  "settings": {
+    "title": "Paramètres", "sessions_dir_label": "Dossier des sessions",
+    "sessions_dir_open": "Ouvrir",
+    "export_template_label": "Modèle de nom d'export",
+    "export_template_hint": "Espaces réservés : {yyyy} {MM} {dd} {HH} {mm} {ss}",
+    "auto_purge_label": "Supprimer automatiquement les sessions après (heures, 0 = jamais)",
+    "image_quality_label": "Qualité d'image",
+    "quality_high": "Haute", "quality_medium": "Moyenne", "quality_low": "Basse",
+    "embed_images_label": "Incorporer les images en base64 par défaut dans Markdown",
+    "hotkeys_label": "Raccourcis clavier",
+    "hotkeys_display": "Démarrer : {{start}} · Pause : {{pause}} · Arrêter : {{stop}} · Annoter : {{annotate}} · Capturer : {{capture}}",
+    "language_label": "Langue", "save": "Enregistrer", "cancel": "Annuler",
+    "restore_defaults": "Restaurer les valeurs par défaut"
+  },
+  "stepcard": {
+    "click_badge": "clic", "mark_point_hint": "Cliquez sur l'image...", "mark_point": "Marquer un point",
+    "spotlight_hint": "Faites glisser pour sélectionner...", "spotlight": "Spotlight",
+    "remove_spotlight": "Supprimer le spotlight", "crop_hint": "Faites glisser pour recadrer...", "crop": "Recadrer l'image",
+    "delete": "Supprimer l'étape", "log_header": "📋 Log · {{timestamp}}", "remove_log": "Supprimer le log",
+    "log_note_placeholder": "Note sur ce log...", "save": "Enregistrer", "cancel": "Annuler",
+    "edit_note": "Modifier la note", "add_note": "Ajouter une note",
+    "annotation_placeholder": "Ajouter une annotation...", "clear": "Effacer", "edit": "Modifier", "annotate": "Annoter"
+  },
+  "live_feed": {
+    "title": "Capture en direct", "step_count_one": "1 étape", "step_count_other": "{{count}} étapes",
+    "waiting": "En attente du prochain changement de fenêtre..."
+  },
+  "sessions_list": {
+    "title": "Sessions récentes",
+    "empty": "Aucune session enregistrée. (les sessions sont supprimées après le délai configuré)",
+    "step_count": "{{count}} étapes", "open": "Ouvrir", "delete": "Supprimer"
+  },
+  "step_preview": { "title": "Étape #{{seq}}", "alt": "Étape {{seq}}" },
+  "toasts": {
+    "capture_blocked_title": "Capture non effectuée",
+    "capture_blocked_body": "Passez à la fenêtre cible et réessayez.",
+    "session_deleted": "Session supprimée", "export_done": "Exportation terminée",
+    "open_folder": "Ouvrir le dossier", "export_failed": "Échec de l'exportation", "settings_saved": "Paramètres enregistrés"
+  },
+  "language": {
+    "selector_label": "Langue", "en": "English", "pt-BR": "Português (Brasil)", "es": "Español",
+    "ru": "Русский", "it": "Italiano", "de": "Deutsch", "ja": "日本語", "zh-CN": "中文 (简体)", "fr": "Français"
+  },
+  "errors": {
+    "no_active_session": "Aucune session active", "session_already_active": "Session déjà active",
+    "session_not_recording": "La session n'enregistre pas", "session_not_paused": "La session n'est pas suspendue",
+    "step_not_found": "Étape introuvable", "not_recording": "N'enregistre pas",
+    "no_foreground_window": "Aucune fenêtre cible trouvée. Passez d'abord à la fenêtre souhaitée.",
+    "pdf_removed": "L'export PDF a été supprimé. Utilisez Markdown."
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "app": {
+    "name": "Strider"
+  },
+  "status": {
+    "idle": "Ready",
+    "recording": "● Recording",
+    "paused": "⏸ Paused"
+  },
+  "session": {
+    "start": "Start",
+    "pause": "Pause",
+    "resume": "Resume",
+    "stop": "Stop",
+    "capture_now": "Capture",
+    "back": "← Back",
+    "step_singular": "step",
+    "step_plural": "steps",
+    "step_count": "{{count}} step",
+    "step_count_plural": "{{count}} steps"
+  },
+  "toolbar": {
+    "start_tooltip": "Start recording  ·  Win+Shift+R",
+    "capture_tooltip": "Capture now  ·  Win+Shift+C",
+    "pause_tooltip": "Pause  ·  Win+Shift+P",
+    "stop_tooltip": "Stop recording  ·  Win+Shift+S",
+    "resume_tooltip": "Resume  ·  Win+Shift+P",
+    "open_folder_tooltip": "Open sessions folder",
+    "settings_tooltip": "Settings"
+  },
+  "home": {
+    "tagline": "Click Start or press Win+Shift+R to record.",
+    "status_recording": "● Recording",
+    "status_paused": "⏸ Paused",
+    "live_step_count_one": "1 step captured",
+    "live_step_count_other": "{{count}} steps captured",
+    "waiting": "Waiting for next window focus...",
+    "paused_hint": "Capture paused. Resume to continue.",
+    "last_step": "Last step: #{{seq}}"
+  },
+  "review": {
+    "title": "Session Review",
+    "step_count": "{{count}} step",
+    "step_count_plural": "{{count}} steps",
+    "duration": "{{min}}min {{sec}}s",
+    "export": "Export",
+    "export_disabled_title": "No steps to export",
+    "export_title": "Export session",
+    "empty_title": "No steps captured",
+    "empty_hint": "No window focus changes were detected in this session. Start a new recording (Win+Shift+R) and switch between windows to capture steps."
+  },
+  "export": {
+    "title": "Export session (Markdown)",
+    "embed_images": "Embed images as base64 (recommended for AI)",
+    "filename_label": "File name (without extension)",
+    "filename_placeholder": "my_export",
+    "folder_label": "Destination folder",
+    "folder_placeholder": "Click Choose...",
+    "choose_folder": "Choose...",
+    "choose_folder_dialog": "Choose destination folder",
+    "cancel": "Cancel",
+    "exporting": "Exporting...",
+    "export": "Export",
+    "error_no_folder": "Choose a destination folder.",
+    "error_no_filename": "Enter a file name."
+  },
+  "settings": {
+    "title": "Settings",
+    "sessions_dir_label": "Sessions folder",
+    "sessions_dir_open": "Open",
+    "export_template_label": "Export name template",
+    "export_template_hint": "Placeholders: {yyyy} {MM} {dd} {HH} {mm} {ss}",
+    "auto_purge_label": "Auto-delete sessions after (hours, 0 = never)",
+    "image_quality_label": "Image quality",
+    "quality_high": "High",
+    "quality_medium": "Medium",
+    "quality_low": "Low",
+    "embed_images_label": "Embed images as base64 by default in Markdown",
+    "hotkeys_label": "Hotkeys",
+    "hotkeys_display": "Start: {{start}} · Pause: {{pause}} · Stop: {{stop}} · Annotate: {{annotate}} · Capture: {{capture}}",
+    "language_label": "Language",
+    "save": "Save",
+    "cancel": "Cancel",
+    "restore_defaults": "Restore defaults"
+  },
+  "stepcard": {
+    "click_badge": "click",
+    "mark_point_hint": "Click on image...",
+    "mark_point": "Mark point",
+    "spotlight_hint": "Drag to select...",
+    "spotlight": "Spotlight",
+    "remove_spotlight": "Remove spotlight",
+    "crop_hint": "Drag to crop...",
+    "crop": "Crop image",
+    "delete": "Remove step",
+    "log_header": "📋 Log · {{timestamp}}",
+    "remove_log": "Remove log",
+    "log_note_placeholder": "Note about this log...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "edit_note": "Edit note",
+    "add_note": "Add note",
+    "annotation_placeholder": "Add an annotation...",
+    "clear": "Clear",
+    "edit": "Edit",
+    "annotate": "Annotate"
+  },
+  "live_feed": {
+    "title": "Live capture",
+    "step_count_one": "1 step",
+    "step_count_other": "{{count}} steps",
+    "waiting": "Waiting for next window change..."
+  },
+  "sessions_list": {
+    "title": "Recent sessions",
+    "empty": "No saved sessions. (sessions are deleted after the configured time)",
+    "step_count": "{{count}} steps",
+    "open": "Open",
+    "delete": "Delete"
+  },
+  "step_preview": {
+    "title": "Step #{{seq}}",
+    "alt": "Step {{seq}}"
+  },
+  "toasts": {
+    "capture_blocked_title": "Capture not performed",
+    "capture_blocked_body": "Switch to the target window and try again.",
+    "session_deleted": "Session deleted",
+    "export_done": "Export complete",
+    "open_folder": "Open folder",
+    "export_failed": "Export failed",
+    "settings_saved": "Settings saved"
+  },
+  "language": {
+    "selector_label": "Language",
+    "en": "English",
+    "pt-BR": "Português (Brasil)",
+    "es": "Español",
+    "ru": "Русский",
+    "it": "Italiano",
+    "de": "Deutsch",
+    "ja": "日本語",
+    "zh-CN": "中文 (简体)",
+    "fr": "Français"
+  },
+  "errors": {
+    "no_active_session": "No active session",
+    "session_already_active": "Session already active",
+    "session_not_recording": "Session is not recording",
+    "session_not_paused": "Session is not paused",
+    "step_not_found": "Step not found",
+    "not_recording": "Not recording",
+    "no_foreground_window": "No target window found. Switch to the desired window first.",
+    "pdf_removed": "PDF export has been removed. Use Markdown."
+  }
+}

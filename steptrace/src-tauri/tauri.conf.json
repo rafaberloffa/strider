@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "StepTrace",
+  "productName": "Strider",
   "version": "0.1.0",
-  "identifier": "com.steptrace.app",
+  "identifier": "com.strider.app",
   "build": {
     "frontendDist": "../dist",
     "devUrl": "http://localhost:1421",
@@ -14,7 +14,7 @@
     "windows": [
       {
         "label": "main",
-        "title": "StepTrace",
+        "title": "Strider",
         "width": 900,
         "height": 650,
         "minWidth": 700,

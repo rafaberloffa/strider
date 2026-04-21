@@ -1,5 +1,6 @@
 import { Button, Title2, Title3, Text, Divider } from '@fluentui/react-components';
 import { ArrowExportRegular, CameraOff24Regular } from '@fluentui/react-icons';
+import { useTranslation } from 'react-i18next';
 import type { Session, Step, Highlight, Spotlight } from '../types';
 import { StepCard } from './StepCard';
 
@@ -21,6 +22,7 @@ export function ReviewPanel({
   session, steps, sessionsDir, onDelete, onAnnotate, onHighlight, onSpotlight,
   onCrop, onUpdateLogNote, onDeleteLogSnippet, onExport,
 }: Props) {
+  const { t } = useTranslation();
   const duration = session.ended_at
     ? Math.round(
         (new Date(session.ended_at).getTime() - new Date(session.started_at).getTime()) / 1000
@@ -33,9 +35,11 @@ export function ReviewPanel({
     <div style={{ padding: 24, maxWidth: 800, margin: '0 auto' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
         <div>
-          <Title2>Revisão da Sessão</Title2>
+          <Title2>{t('review.title')}</Title2>
           <Text size={300} style={{ color: 'var(--colorNeutralForeground3)' }}>
-            {steps.length} passos · {Math.floor(duration / 60)}min {duration % 60}s
+            {steps.length === 1 ? t('review.step_count', { count: 1 }) : t('review.step_count_plural', { count: steps.length })}
+            {' · '}
+            {t('review.duration', { min: Math.floor(duration / 60), sec: duration % 60 })}
           </Text>
         </div>
         <Button
@@ -43,16 +47,16 @@ export function ReviewPanel({
           icon={<ArrowExportRegular />}
           onClick={onExport}
           disabled={isEmpty}
-          title={isEmpty ? 'Sem passos para exportar' : 'Exportar sessão'}
+          title={isEmpty ? t('review.export_disabled_title') : t('review.export_title')}
         >
-          Exportar
+          {t('review.export')}
         </Button>
       </div>
       <Divider style={{ marginBottom: 16 }} />
 
       {isEmpty ? (
         <div
-          className="steptrace-fadein"
+          className="strider-fadein"
           style={{
             display: 'flex', flexDirection: 'column',
             alignItems: 'center', justifyContent: 'center',
@@ -68,10 +72,9 @@ export function ReviewPanel({
               color: 'var(--colorNeutralForeground3)',
             }}
           />
-          <Title3>Nenhum passo capturado</Title3>
+          <Title3>{t('review.empty_title')}</Title3>
           <Text size={200} style={{ color: 'var(--colorNeutralForeground3)', maxWidth: 440 }}>
-            Nenhuma mudança de foco foi detectada nesta sessão. Inicie uma nova gravação
-            (<strong>Win+Shift+R</strong>) e alterne entre janelas para capturar passos.
+            {t('review.empty_hint')}
           </Text>
         </div>
       ) : (

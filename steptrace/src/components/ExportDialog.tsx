@@ -5,6 +5,7 @@ import {
 } from '@fluentui/react-components';
 import { invoke } from '@tauri-apps/api/core';
 import { open } from '@tauri-apps/plugin-dialog';
+import { useTranslation } from 'react-i18next';
 import { renderTemplate, sanitize } from '../utils/format';
 
 interface Props {
@@ -20,6 +21,7 @@ interface Props {
 export function ExportDialog({
   open: isOpen, onClose, sessionId, template, defaultEmbed, onDone, onError,
 }: Props) {
+  const { t } = useTranslation();
   const [embedImages, setEmbedImages] = useState(defaultEmbed);
   const [filename, setFilename] = useState('');
   const [outputDir, setOutputDir] = useState('');
@@ -34,13 +36,13 @@ export function ExportDialog({
   }, [isOpen, template, defaultEmbed]);
 
   const pickFolder = async () => {
-    const path = await open({ directory: true, title: 'Escolha a pasta de destino' });
+    const path = await open({ directory: true, title: t('export.choose_folder_dialog') });
     if (path) setOutputDir(String(path));
   };
 
   const handleExport = async () => {
-    if (!outputDir) { onError('Escolha uma pasta de destino.'); return; }
-    if (!filename.trim()) { onError('Informe o nome do arquivo.'); return; }
+    if (!outputDir) { onError(t('export.error_no_folder')); return; }
+    if (!filename.trim()) { onError(t('export.error_no_filename')); return; }
 
     setExporting(true);
     try {
@@ -63,39 +65,39 @@ export function ExportDialog({
   return (
     <Dialog open={isOpen} onOpenChange={(_, d) => !d.open && onClose()}>
       <DialogSurface style={{ maxWidth: 480 }}>
-        <DialogTitle>Exportar sessão (Markdown)</DialogTitle>
+        <DialogTitle>{t('export.title')}</DialogTitle>
         <DialogBody>
           <DialogContent>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               <Switch
                 checked={embedImages}
                 onChange={(_, d) => setEmbedImages(d.checked)}
-                label="Embutir imagens em base64 (recomendado para IA)"
+                label={t('export.embed_images')}
               />
-              <Field label="Nome do arquivo (sem extensão)">
+              <Field label={t('export.filename_label')}>
                 <Input
                   value={filename}
                   onChange={(_, d) => setFilename(d.value)}
-                  placeholder="meu_export"
+                  placeholder={t('export.filename_placeholder')}
                 />
               </Field>
-              <Field label="Pasta de destino">
+              <Field label={t('export.folder_label')}>
                 <div style={{ display: 'flex', gap: 8 }}>
                   <Input
                     value={outputDir}
                     onChange={(_, d) => setOutputDir(d.value)}
-                    placeholder="Clique em Escolher..."
+                    placeholder={t('export.folder_placeholder')}
                     style={{ flex: 1 }}
                   />
-                  <Button onClick={pickFolder}>Escolher...</Button>
+                  <Button onClick={pickFolder}>{t('export.choose_folder')}</Button>
                 </div>
               </Field>
             </div>
           </DialogContent>
           <DialogActions>
-            <Button appearance="secondary" onClick={onClose}>Cancelar</Button>
+            <Button appearance="secondary" onClick={onClose}>{t('export.cancel')}</Button>
             <Button appearance="primary" onClick={handleExport} disabled={exporting}>
-              {exporting ? 'Exportando...' : 'Exportar'}
+              {exporting ? t('export.exporting') : t('export.export')}
             </Button>
           </DialogActions>
         </DialogBody>

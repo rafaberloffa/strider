@@ -1,0 +1,97 @@
+{
+  "app": { "name": "Strider" },
+  "status": { "idle": "Bereit", "recording": "● Aufnahme", "paused": "⏸ Pausiert" },
+  "session": {
+    "start": "Starten", "pause": "Pause", "resume": "Fortsetzen", "stop": "Stoppen",
+    "capture_now": "Aufnehmen", "back": "← Zurück",
+    "step_singular": "Schritt", "step_plural": "Schritte",
+    "step_count": "{{count}} Schritt", "step_count_plural": "{{count}} Schritte"
+  },
+  "toolbar": {
+    "start_tooltip": "Aufnahme starten  ·  Win+Shift+R",
+    "capture_tooltip": "Jetzt aufnehmen  ·  Win+Shift+C",
+    "pause_tooltip": "Pause  ·  Win+Shift+P",
+    "stop_tooltip": "Aufnahme stoppen  ·  Win+Shift+S",
+    "resume_tooltip": "Fortsetzen  ·  Win+Shift+P",
+    "open_folder_tooltip": "Sitzungsordner öffnen",
+    "settings_tooltip": "Einstellungen"
+  },
+  "home": {
+    "tagline": "Klicken Sie auf Starten oder drücken Sie Win+Shift+R zum Aufnehmen.",
+    "status_recording": "● Aufnahme", "status_paused": "⏸ Pausiert",
+    "live_step_count_one": "1 Schritt aufgenommen", "live_step_count_other": "{{count}} Schritte aufgenommen",
+    "waiting": "Warten auf nächsten Fensterwechsel...",
+    "paused_hint": "Aufnahme pausiert. Fortsetzen zum Weitermachen.",
+    "last_step": "Letzter Schritt: #{{seq}}"
+  },
+  "review": {
+    "title": "Sitzungsübersicht",
+    "step_count": "{{count}} Schritt", "step_count_plural": "{{count}} Schritte",
+    "duration": "{{min}}min {{sec}}s",
+    "export": "Exportieren", "export_disabled_title": "Keine Schritte zum Exportieren",
+    "export_title": "Sitzung exportieren",
+    "empty_title": "Keine Schritte aufgenommen",
+    "empty_hint": "In dieser Sitzung wurden keine Fensterumschaltvorgänge erkannt. Starten Sie eine neue Aufnahme (Win+Shift+R) und wechseln Sie zwischen Fenstern."
+  },
+  "export": {
+    "title": "Sitzung exportieren (Markdown)",
+    "embed_images": "Bilder als Base64 einbetten (empfohlen für KI)",
+    "filename_label": "Dateiname (ohne Erweiterung)",
+    "filename_placeholder": "mein_export",
+    "folder_label": "Zielordner", "folder_placeholder": "Auf Auswählen klicken...",
+    "choose_folder": "Auswählen...", "choose_folder_dialog": "Zielordner auswählen",
+    "cancel": "Abbrechen", "exporting": "Exportiere...", "export": "Exportieren",
+    "error_no_folder": "Wählen Sie einen Zielordner.",
+    "error_no_filename": "Geben Sie einen Dateinamen ein."
+  },
+  "settings": {
+    "title": "Einstellungen", "sessions_dir_label": "Sitzungsordner",
+    "sessions_dir_open": "Öffnen",
+    "export_template_label": "Exportname-Vorlage",
+    "export_template_hint": "Platzhalter: {yyyy} {MM} {dd} {HH} {mm} {ss}",
+    "auto_purge_label": "Sitzungen automatisch löschen nach (Stunden, 0 = nie)",
+    "image_quality_label": "Bildqualität",
+    "quality_high": "Hoch", "quality_medium": "Mittel", "quality_low": "Niedrig",
+    "embed_images_label": "Bilder standardmäßig als Base64 in Markdown einbetten",
+    "hotkeys_label": "Tastenkürzel",
+    "hotkeys_display": "Starten: {{start}} · Pause: {{pause}} · Stoppen: {{stop}} · Annotieren: {{annotate}} · Aufnehmen: {{capture}}",
+    "language_label": "Sprache", "save": "Speichern", "cancel": "Abbrechen",
+    "restore_defaults": "Standardwerte wiederherstellen"
+  },
+  "stepcard": {
+    "click_badge": "Klick", "mark_point_hint": "Auf Bild klicken...", "mark_point": "Punkt markieren",
+    "spotlight_hint": "Zum Auswählen ziehen...", "spotlight": "Spotlight",
+    "remove_spotlight": "Spotlight entfernen", "crop_hint": "Zum Zuschneiden ziehen...", "crop": "Bild zuschneiden",
+    "delete": "Schritt entfernen", "log_header": "📋 Log · {{timestamp}}", "remove_log": "Log entfernen",
+    "log_note_placeholder": "Notiz zu diesem Log...", "save": "Speichern", "cancel": "Abbrechen",
+    "edit_note": "Notiz bearbeiten", "add_note": "Notiz hinzufügen",
+    "annotation_placeholder": "Anmerkung hinzufügen...", "clear": "Löschen", "edit": "Bearbeiten", "annotate": "Annotieren"
+  },
+  "live_feed": {
+    "title": "Live-Aufnahme", "step_count_one": "1 Schritt", "step_count_other": "{{count}} Schritte",
+    "waiting": "Warten auf nächsten Fensterwechsel..."
+  },
+  "sessions_list": {
+    "title": "Letzte Sitzungen",
+    "empty": "Keine gespeicherten Sitzungen. (Sitzungen werden nach der konfigurierten Zeit gelöscht)",
+    "step_count": "{{count}} Schritte", "open": "Öffnen", "delete": "Löschen"
+  },
+  "step_preview": { "title": "Schritt #{{seq}}", "alt": "Schritt {{seq}}" },
+  "toasts": {
+    "capture_blocked_title": "Aufnahme nicht durchgeführt",
+    "capture_blocked_body": "Wechseln Sie zum Zielfenster und versuchen Sie es erneut.",
+    "session_deleted": "Sitzung gelöscht", "export_done": "Export abgeschlossen",
+    "open_folder": "Ordner öffnen", "export_failed": "Export fehlgeschlagen", "settings_saved": "Einstellungen gespeichert"
+  },
+  "language": {
+    "selector_label": "Sprache", "en": "English", "pt-BR": "Português (Brasil)", "es": "Español",
+    "ru": "Русский", "it": "Italiano", "de": "Deutsch", "ja": "日本語", "zh-CN": "中文 (简体)", "fr": "Français"
+  },
+  "errors": {
+    "no_active_session": "Keine aktive Sitzung", "session_already_active": "Sitzung bereits aktiv",
+    "session_not_recording": "Sitzung nimmt nicht auf", "session_not_paused": "Sitzung ist nicht pausiert",
+    "step_not_found": "Schritt nicht gefunden", "not_recording": "Nimmt nicht auf",
+    "no_foreground_window": "Kein Zielfenster gefunden. Wechseln Sie zuerst zum gewünschten Fenster.",
+    "pdf_removed": "PDF-Export wurde entfernt. Verwenden Sie Markdown."
+  }
+}

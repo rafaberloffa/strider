@@ -1,0 +1,97 @@
+{
+  "app": { "name": "Strider" },
+  "status": { "idle": "就绪", "recording": "● 录制中", "paused": "⏸ 已暂停" },
+  "session": {
+    "start": "开始", "pause": "暂停", "resume": "继续", "stop": "停止",
+    "capture_now": "截图", "back": "← 返回",
+    "step_singular": "步骤", "step_plural": "步骤",
+    "step_count": "{{count}} 步骤", "step_count_plural": "{{count}} 步骤"
+  },
+  "toolbar": {
+    "start_tooltip": "开始录制  ·  Win+Shift+R",
+    "capture_tooltip": "立即截图  ·  Win+Shift+C",
+    "pause_tooltip": "暂停  ·  Win+Shift+P",
+    "stop_tooltip": "停止录制  ·  Win+Shift+S",
+    "resume_tooltip": "继续  ·  Win+Shift+P",
+    "open_folder_tooltip": "打开会话文件夹",
+    "settings_tooltip": "设置"
+  },
+  "home": {
+    "tagline": "点击「开始」或按 Win+Shift+R 开始录制。",
+    "status_recording": "● 录制中", "status_paused": "⏸ 已暂停",
+    "live_step_count_one": "已捕获 1 个步骤", "live_step_count_other": "已捕获 {{count}} 个步骤",
+    "waiting": "等待下一次窗口切换...",
+    "paused_hint": "截图已暂停。继续录制请点击「继续」。",
+    "last_step": "最后步骤：#{{seq}}"
+  },
+  "review": {
+    "title": "会话回顾",
+    "step_count": "{{count}} 步骤", "step_count_plural": "{{count}} 步骤",
+    "duration": "{{min}}分 {{sec}}秒",
+    "export": "导出", "export_disabled_title": "没有可导出的步骤",
+    "export_title": "导出会话",
+    "empty_title": "未捕获步骤",
+    "empty_hint": "本次会话未检测到焦点切换。请开始新录制 (Win+Shift+R) 并切换窗口以捕获步骤。"
+  },
+  "export": {
+    "title": "导出会话 (Markdown)",
+    "embed_images": "将图像嵌入 base64（推荐用于 AI）",
+    "filename_label": "文件名（不含扩展名）",
+    "filename_placeholder": "my_export",
+    "folder_label": "目标文件夹", "folder_placeholder": "点击「选择...」",
+    "choose_folder": "选择...", "choose_folder_dialog": "选择目标文件夹",
+    "cancel": "取消", "exporting": "导出中...", "export": "导出",
+    "error_no_folder": "请选择目标文件夹。",
+    "error_no_filename": "请输入文件名。"
+  },
+  "settings": {
+    "title": "设置", "sessions_dir_label": "会话文件夹",
+    "sessions_dir_open": "打开",
+    "export_template_label": "导出名称模板",
+    "export_template_hint": "占位符：{yyyy} {MM} {dd} {HH} {mm} {ss}",
+    "auto_purge_label": "自动删除会话的时间（小时，0 = 从不）",
+    "image_quality_label": "图像质量",
+    "quality_high": "高", "quality_medium": "中", "quality_low": "低",
+    "embed_images_label": "默认在 Markdown 中将图像嵌入 base64",
+    "hotkeys_label": "快捷键",
+    "hotkeys_display": "开始：{{start}} · 暂停：{{pause}} · 停止：{{stop}} · 注释：{{annotate}} · 截图：{{capture}}",
+    "language_label": "语言", "save": "保存", "cancel": "取消",
+    "restore_defaults": "恢复默认设置"
+  },
+  "stepcard": {
+    "click_badge": "点击", "mark_point_hint": "点击图像...", "mark_point": "标记点",
+    "spotlight_hint": "拖动以选择...", "spotlight": "聚焦",
+    "remove_spotlight": "删除聚焦", "crop_hint": "拖动以裁剪...", "crop": "裁剪图像",
+    "delete": "删除步骤", "log_header": "📋 日志 · {{timestamp}}", "remove_log": "删除日志",
+    "log_note_placeholder": "关于此日志的备注...", "save": "保存", "cancel": "取消",
+    "edit_note": "编辑备注", "add_note": "添加备注",
+    "annotation_placeholder": "添加注释...", "clear": "清除", "edit": "编辑", "annotate": "注释"
+  },
+  "live_feed": {
+    "title": "实时截图", "step_count_one": "1 步骤", "step_count_other": "{{count}} 步骤",
+    "waiting": "等待下一次窗口切换..."
+  },
+  "sessions_list": {
+    "title": "最近会话",
+    "empty": "没有已保存的会话。（会话将在配置的时间后删除）",
+    "step_count": "{{count}} 步骤", "open": "打开", "delete": "删除"
+  },
+  "step_preview": { "title": "步骤 #{{seq}}", "alt": "步骤 {{seq}}" },
+  "toasts": {
+    "capture_blocked_title": "未执行截图",
+    "capture_blocked_body": "请切换到目标窗口后重试。",
+    "session_deleted": "会话已删除", "export_done": "导出完成",
+    "open_folder": "打开文件夹", "export_failed": "导出失败", "settings_saved": "设置已保存"
+  },
+  "language": {
+    "selector_label": "语言", "en": "English", "pt-BR": "Português (Brasil)", "es": "Español",
+    "ru": "Русский", "it": "Italiano", "de": "Deutsch", "ja": "日本語", "zh-CN": "中文 (简体)", "fr": "Français"
+  },
+  "errors": {
+    "no_active_session": "没有活跃会话", "session_already_active": "会话已在进行中",
+    "session_not_recording": "会话未在录制", "session_not_paused": "会话未暂停",
+    "step_not_found": "找不到步骤", "not_recording": "未在录制",
+    "no_foreground_window": "未找到目标窗口。请先切换到所需窗口。",
+    "pdf_removed": "PDF 导出已移除。请使用 Markdown。"
+  }
+}

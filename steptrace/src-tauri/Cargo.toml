@@ -1,12 +1,12 @@
 [package]
-name = "steptrace"
+name = "strider"
 version = "0.1.0"
-description = "StepTrace — gravador de sessões de navegação entre janelas"
+description = "Strider — gravador de sessões de navegação entre janelas"
 authors = ["you"]
 edition = "2021"
 
 [lib]
-name = "steptrace_lib"
+name = "strider_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]

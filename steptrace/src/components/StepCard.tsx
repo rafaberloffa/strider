@@ -7,6 +7,7 @@ import {
   PaintBrush24Regular, Crop24Regular, Dismiss16Regular, ZoomIn24Regular,
 } from '@fluentui/react-icons';
 import { convertFileSrc } from '@tauri-apps/api/core';
+import { useTranslation } from 'react-i18next';
 import type { Step, Highlight, Spotlight } from '../types';
 
 interface Props {
@@ -27,6 +28,7 @@ export function StepCard({
   step, onDelete, onAnnotate, onHighlight, onSpotlight, onCrop,
   onUpdateLogNote, onDeleteLogSnippet, sessionsDir,
 }: Props) {
+  const { t, i18n } = useTranslation();
   const [editing, setEditing] = useState(false);
   const [annotation, setAnnotation] = useState(step.annotation ?? '');
   const [editingNote, setEditingNote] = useState(false);
@@ -38,8 +40,6 @@ export function StepCard({
   const imgRef = useRef<HTMLImageElement>(null);
 
   const rawPath = `${sessionsDir}/${step.session_id}/${step.image_path}`.replace(/\\/g, '/');
-  // Baseline estável (timestamp do step) + bust local para crop/highlight recém-aplicados.
-  // Sobrevive a remontagem do componente pois o timestamp é persistido no step.
   const imageSrc = useMemo(
     () => {
       const base = convertFileSrc(rawPath, 'asset');
@@ -49,9 +49,8 @@ export function StepCard({
     },
     [rawPath, step.timestamp, step.highlight, cropBust],
   );
-  const time = new Date(step.timestamp).toLocaleTimeString('pt-BR');
+  const time = new Intl.DateTimeFormat(i18n.language, { hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(new Date(step.timestamp));
 
-  // ── Highlight (ponto laranja) ──────────────────────────────────────────────
   const handleImgClick = (e: React.MouseEvent<HTMLImageElement>) => {
     if (mode !== 'highlight' || !imgRef.current) return;
     const rect = imgRef.current.getBoundingClientRect();
@@ -66,7 +65,6 @@ export function StepCard({
     setMode('none');
   };
 
-  // ── Spotlight e Crop (drag-to-rect) ──────────────────────────────────────
   const handleMouseDown = (e: React.MouseEvent<HTMLImageElement>) => {
     if ((mode !== 'spotlight' && mode !== 'crop') || !imgRef.current) return;
     e.preventDefault();
@@ -107,9 +105,7 @@ export function StepCard({
   };
 
   const handleMouseLeave = () => {
-    if (selection) {
-      setSelection(null);
-    }
+    if (selection) setSelection(null);
   };
 
   const saveAnnotation = () => { onAnnotate(step.id, annotation); setEditing(false); };
@@ -117,7 +113,6 @@ export function StepCard({
 
   const saveNote = () => { onUpdateLogNote(step.id, noteText.trim() || undefined); setEditingNote(false); };
 
-  // ── Spotlight overlay (percentages relativas à imagem) ────────────────────
   const spotOverlay = step.spotlight && natSize ? (() => {
     const { x, y, w, h } = step.spotlight!;
     const pL = (x / natSize.w) * 100;
@@ -142,7 +137,7 @@ export function StepCard({
       <CardHeader
         header={
           <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-            {isClick && <Badge size="small" appearance="filled" color="danger">clique</Badge>}
+            {isClick && <Badge size="small" appearance="filled" color="danger">{t('stepcard.click_badge')}</Badge>}
             <Text weight="semibold">{step.window_title}</Text>
           </div>
         }
@@ -153,14 +148,14 @@ export function StepCard({
         }
         action={
           <div style={{ display: 'flex', gap: 4 }}>
-            <Tooltip content={mode === 'highlight' ? 'Clique na imagem...' : 'Marcar ponto'} relationship="label">
+            <Tooltip content={mode === 'highlight' ? t('stepcard.mark_point_hint') : t('stepcard.mark_point')} relationship="label">
               <Button
                 appearance={mode === 'highlight' ? 'primary' : 'subtle'}
                 icon={<PaintBrush24Regular />}
                 onClick={() => setMode(m => m === 'highlight' ? 'none' : 'highlight')}
               />
             </Tooltip>
-            <Tooltip content={mode === 'spotlight' ? 'Arraste para selecionar...' : 'Spotlight'} relationship="label">
+            <Tooltip content={mode === 'spotlight' ? t('stepcard.spotlight_hint') : t('stepcard.spotlight')} relationship="label">
               <Button
                 appearance={mode === 'spotlight' ? 'primary' : 'subtle'}
                 icon={<ZoomIn24Regular />}
@@ -168,30 +163,29 @@ export function StepCard({
               />
             </Tooltip>
             {step.spotlight && (
-              <Tooltip content="Remover spotlight" relationship="label">
+              <Tooltip content={t('stepcard.remove_spotlight')} relationship="label">
                 <Button appearance="subtle" icon={<Dismiss16Regular />} onClick={() => onSpotlight(step.id, null)} />
               </Tooltip>
             )}
-            <Tooltip content={mode === 'crop' ? 'Arraste para recortar...' : 'Recortar imagem'} relationship="label">
+            <Tooltip content={mode === 'crop' ? t('stepcard.crop_hint') : t('stepcard.crop')} relationship="label">
               <Button
                 appearance={mode === 'crop' ? 'primary' : 'subtle'}
                 icon={<Crop24Regular />}
                 onClick={() => setMode(m => m === 'crop' ? 'none' : 'crop')}
               />
             </Tooltip>
-            <Tooltip content="Remover passo" relationship="label">
+            <Tooltip content={t('stepcard.delete')} relationship="label">
               <Button appearance="subtle" icon={<Delete24Regular />} onClick={() => onDelete(step.id)} />
             </Tooltip>
           </div>
         }
       />
 
-      {/* Image container */}
       <div style={{ position: 'relative' }}>
         <img
           ref={imgRef}
           src={imageSrc}
-          alt={`Passo ${step.sequence}`}
+          alt={t('step_preview.alt', { seq: step.sequence })}
           onClick={handleImgClick}
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
@@ -214,7 +208,6 @@ export function StepCard({
           }}
         />
         {spotOverlay}
-        {/* Seleção em andamento */}
         {selection && (
           <div style={{
             position: 'absolute',
@@ -228,21 +221,22 @@ export function StepCard({
         )}
       </div>
 
-      {/* Log snippet */}
       {step.log_snippet && (
         <div style={{ marginTop: 8, background: 'var(--colorNeutralBackground3)', borderRadius: 4, padding: 8 }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 }}>
             <Text size={100} style={{ color: 'var(--colorNeutralForeground3)' }}>
-              📋 Log · {step.log_snippet.captured_at.length >= 19
-                ? step.log_snippet.captured_at.slice(11, 19)
-                : step.log_snippet.captured_at}
+              {t('stepcard.log_header', {
+                timestamp: step.log_snippet.captured_at.length >= 19
+                  ? step.log_snippet.captured_at.slice(11, 19)
+                  : step.log_snippet.captured_at,
+              })}
             </Text>
             <Button
               appearance="subtle"
               size="small"
               icon={<Dismiss16Regular />}
               onClick={() => onDeleteLogSnippet(step.id)}
-              title="Remover log"
+              title={t('stepcard.remove_log')}
             />
           </div>
           <pre style={{ fontSize: 12, overflowX: 'auto', whiteSpace: 'pre-wrap', wordBreak: 'break-all', margin: 0 }}>
@@ -253,12 +247,12 @@ export function StepCard({
               <Input
                 value={noteText}
                 onChange={(_, d) => setNoteText(d.value)}
-                placeholder="Nota sobre este log..."
+                placeholder={t('stepcard.log_note_placeholder')}
                 size="small"
                 style={{ flex: 1 }}
               />
-              <Button size="small" appearance="primary" onClick={saveNote}>Salvar</Button>
-              <Button size="small" appearance="subtle" onClick={() => setEditingNote(false)}>Cancelar</Button>
+              <Button size="small" appearance="primary" onClick={saveNote}>{t('stepcard.save')}</Button>
+              <Button size="small" appearance="subtle" onClick={() => setEditingNote(false)}>{t('stepcard.cancel')}</Button>
             </div>
           ) : (
             <div style={{ marginTop: 4, display: 'flex', alignItems: 'center', gap: 6 }}>
@@ -272,28 +266,27 @@ export function StepCard({
                 size="small"
                 onClick={() => { setNoteText(step.log_snippet?.note ?? ''); setEditingNote(true); }}
               >
-                {step.log_snippet.note ? 'Editar nota' : 'Adicionar nota'}
+                {step.log_snippet.note ? t('stepcard.edit_note') : t('stepcard.add_note')}
               </Button>
             </div>
           )}
         </div>
       )}
 
-      {/* Annotation */}
       {editing ? (
         <div style={{ marginTop: 8 }}>
           <Textarea
             value={annotation}
             onChange={(_, d) => setAnnotation(d.value)}
-            placeholder="Adicione uma anotação..."
+            placeholder={t('stepcard.annotation_placeholder')}
             style={{ width: '100%' }}
           />
           <div style={{ display: 'flex', gap: 8, marginTop: 4 }}>
-            <Button appearance="primary" size="small" onClick={saveAnnotation}>Salvar</Button>
-            <Button appearance="subtle" size="small" onClick={() => setEditing(false)}>Cancelar</Button>
+            <Button appearance="primary" size="small" onClick={saveAnnotation}>{t('stepcard.save')}</Button>
+            <Button appearance="subtle" size="small" onClick={() => setEditing(false)}>{t('stepcard.cancel')}</Button>
             {step.annotation && (
               <Button appearance="subtle" size="small" icon={<Dismiss20Regular />} onClick={clearAnnotation}>
-                Limpar
+                {t('stepcard.clear')}
               </Button>
             )}
           </div>
@@ -309,7 +302,7 @@ export function StepCard({
             size="small"
             onClick={() => { setAnnotation(step.annotation ?? ''); setEditing(true); }}
           >
-            {step.annotation ? 'Editar' : 'Anotar'}
+            {step.annotation ? t('stepcard.edit') : t('stepcard.annotate')}
           </Button>
         </div>
       )}

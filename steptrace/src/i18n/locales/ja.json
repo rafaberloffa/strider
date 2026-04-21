@@ -1,0 +1,97 @@
+{
+  "app": { "name": "Strider" },
+  "status": { "idle": "待機中", "recording": "● 録画中", "paused": "⏸ 一時停止" },
+  "session": {
+    "start": "開始", "pause": "一時停止", "resume": "再開", "stop": "停止",
+    "capture_now": "キャプチャ", "back": "← 戻る",
+    "step_singular": "ステップ", "step_plural": "ステップ",
+    "step_count": "{{count}} ステップ", "step_count_plural": "{{count}} ステップ"
+  },
+  "toolbar": {
+    "start_tooltip": "録画開始  ·  Win+Shift+R",
+    "capture_tooltip": "今すぐキャプチャ  ·  Win+Shift+C",
+    "pause_tooltip": "一時停止  ·  Win+Shift+P",
+    "stop_tooltip": "録画停止  ·  Win+Shift+S",
+    "resume_tooltip": "再開  ·  Win+Shift+P",
+    "open_folder_tooltip": "セッションフォルダを開く",
+    "settings_tooltip": "設定"
+  },
+  "home": {
+    "tagline": "「開始」をクリックするか、Win+Shift+Rを押して録画を開始してください。",
+    "status_recording": "● 録画中", "status_paused": "⏸ 一時停止",
+    "live_step_count_one": "1 ステップキャプチャ済み", "live_step_count_other": "{{count}} ステップキャプチャ済み",
+    "waiting": "次のウィンドウ変更を待機中...",
+    "paused_hint": "キャプチャが一時停止中です。再開するには「再開」を押してください。",
+    "last_step": "最後のステップ: #{{seq}}"
+  },
+  "review": {
+    "title": "セッションレビュー",
+    "step_count": "{{count}} ステップ", "step_count_plural": "{{count}} ステップ",
+    "duration": "{{min}}分 {{sec}}秒",
+    "export": "エクスポート", "export_disabled_title": "エクスポートするステップがありません",
+    "export_title": "セッションをエクスポート",
+    "empty_title": "キャプチャされたステップなし",
+    "empty_hint": "このセッションではフォーカスの変更が検出されませんでした。新しい録画を開始して (Win+Shift+R)、ウィンドウを切り替えてステップをキャプチャしてください。"
+  },
+  "export": {
+    "title": "セッションをエクスポート (Markdown)",
+    "embed_images": "画像をbase64で埋め込む (AIに推奨)",
+    "filename_label": "ファイル名 (拡張子なし)",
+    "filename_placeholder": "my_export",
+    "folder_label": "保存先フォルダ", "folder_placeholder": "「選択...」をクリック",
+    "choose_folder": "選択...", "choose_folder_dialog": "保存先フォルダを選択",
+    "cancel": "キャンセル", "exporting": "エクスポート中...", "export": "エクスポート",
+    "error_no_folder": "保存先フォルダを選択してください。",
+    "error_no_filename": "ファイル名を入力してください。"
+  },
+  "settings": {
+    "title": "設定", "sessions_dir_label": "セッションフォルダ",
+    "sessions_dir_open": "開く",
+    "export_template_label": "エクスポート名テンプレート",
+    "export_template_hint": "プレースホルダー: {yyyy} {MM} {dd} {HH} {mm} {ss}",
+    "auto_purge_label": "セッションを自動削除する期間 (時間、0 = しない)",
+    "image_quality_label": "画像品質",
+    "quality_high": "高", "quality_medium": "中", "quality_low": "低",
+    "embed_images_label": "デフォルトでMarkdownに画像をbase64で埋め込む",
+    "hotkeys_label": "ホットキー",
+    "hotkeys_display": "開始: {{start}} · 一時停止: {{pause}} · 停止: {{stop}} · 注釈: {{annotate}} · キャプチャ: {{capture}}",
+    "language_label": "言語", "save": "保存", "cancel": "キャンセル",
+    "restore_defaults": "デフォルトに戻す"
+  },
+  "stepcard": {
+    "click_badge": "クリック", "mark_point_hint": "画像をクリック...", "mark_point": "ポイントをマーク",
+    "spotlight_hint": "ドラッグして選択...", "spotlight": "スポットライト",
+    "remove_spotlight": "スポットライトを削除", "crop_hint": "ドラッグしてトリミング...", "crop": "画像をトリミング",
+    "delete": "ステップを削除", "log_header": "📋 ログ · {{timestamp}}", "remove_log": "ログを削除",
+    "log_note_placeholder": "このログについてのメモ...", "save": "保存", "cancel": "キャンセル",
+    "edit_note": "メモを編集", "add_note": "メモを追加",
+    "annotation_placeholder": "注釈を追加...", "clear": "クリア", "edit": "編集", "annotate": "注釈"
+  },
+  "live_feed": {
+    "title": "ライブキャプチャ", "step_count_one": "1 ステップ", "step_count_other": "{{count}} ステップ",
+    "waiting": "次のウィンドウ変更を待機中..."
+  },
+  "sessions_list": {
+    "title": "最近のセッション",
+    "empty": "保存されたセッションがありません。(設定した時間後にセッションは削除されます)",
+    "step_count": "{{count}} ステップ", "open": "開く", "delete": "削除"
+  },
+  "step_preview": { "title": "ステップ #{{seq}}", "alt": "ステップ {{seq}}" },
+  "toasts": {
+    "capture_blocked_title": "キャプチャが実行されませんでした",
+    "capture_blocked_body": "ターゲットウィンドウに切り替えてから再試行してください。",
+    "session_deleted": "セッションを削除しました", "export_done": "エクスポート完了",
+    "open_folder": "フォルダを開く", "export_failed": "エクスポート失敗", "settings_saved": "設定を保存しました"
+  },
+  "language": {
+    "selector_label": "言語", "en": "English", "pt-BR": "Português (Brasil)", "es": "Español",
+    "ru": "Русский", "it": "Italiano", "de": "Deutsch", "ja": "日本語", "zh-CN": "中文 (简体)", "fr": "Français"
+  },
+  "errors": {
+    "no_active_session": "アクティブなセッションがありません", "session_already_active": "セッションは既にアクティブです",
+    "session_not_recording": "セッションは録画中ではありません", "session_not_paused": "セッションは一時停止中ではありません",
+    "step_not_found": "ステップが見つかりません", "not_recording": "録画していません",
+    "no_foreground_window": "ターゲットウィンドウが見つかりません。最初に目的のウィンドウに切り替えてください。",
+    "pdf_removed": "PDFエクスポートは削除されました。Markdownを使用してください。"
+  }
+}

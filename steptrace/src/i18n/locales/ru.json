@@ -1,0 +1,97 @@
+{
+  "app": { "name": "Strider" },
+  "status": { "idle": "Готов", "recording": "● Запись", "paused": "⏸ Пауза" },
+  "session": {
+    "start": "Начать", "pause": "Пауза", "resume": "Продолжить", "stop": "Остановить",
+    "capture_now": "Захват", "back": "← Назад",
+    "step_singular": "шаг", "step_plural": "шагов",
+    "step_count": "{{count}} шаг", "step_count_plural": "{{count}} шагов"
+  },
+  "toolbar": {
+    "start_tooltip": "Начать запись  ·  Win+Shift+R",
+    "capture_tooltip": "Захват сейчас  ·  Win+Shift+C",
+    "pause_tooltip": "Пауза  ·  Win+Shift+P",
+    "stop_tooltip": "Остановить запись  ·  Win+Shift+S",
+    "resume_tooltip": "Продолжить  ·  Win+Shift+P",
+    "open_folder_tooltip": "Открыть папку сессий",
+    "settings_tooltip": "Настройки"
+  },
+  "home": {
+    "tagline": "Нажмите «Начать» или Win+Shift+R для записи.",
+    "status_recording": "● Запись", "status_paused": "⏸ Пауза",
+    "live_step_count_one": "1 шаг захвачен", "live_step_count_other": "{{count}} шагов захвачено",
+    "waiting": "Ожидание следующего переключения окна...",
+    "paused_hint": "Захват на паузе. Продолжите для записи.",
+    "last_step": "Последний шаг: #{{seq}}"
+  },
+  "review": {
+    "title": "Обзор сессии",
+    "step_count": "{{count}} шаг", "step_count_plural": "{{count}} шагов",
+    "duration": "{{min}}мин {{sec}}с",
+    "export": "Экспорт", "export_disabled_title": "Нет шагов для экспорта",
+    "export_title": "Экспорт сессии",
+    "empty_title": "Шаги не захвачены",
+    "empty_hint": "В этой сессии не было обнаружено переключений фокуса. Начните новую запись (Win+Shift+R) и переключайтесь между окнами."
+  },
+  "export": {
+    "title": "Экспорт сессии (Markdown)",
+    "embed_images": "Встроить изображения в base64 (рекомендуется для ИИ)",
+    "filename_label": "Имя файла (без расширения)",
+    "filename_placeholder": "мой_экспорт",
+    "folder_label": "Папка назначения", "folder_placeholder": "Нажмите «Выбрать...»",
+    "choose_folder": "Выбрать...", "choose_folder_dialog": "Выберите папку назначения",
+    "cancel": "Отмена", "exporting": "Экспорт...", "export": "Экспорт",
+    "error_no_folder": "Выберите папку назначения.",
+    "error_no_filename": "Введите имя файла."
+  },
+  "settings": {
+    "title": "Настройки", "sessions_dir_label": "Папка сессий",
+    "sessions_dir_open": "Открыть",
+    "export_template_label": "Шаблон имени экспорта",
+    "export_template_hint": "Плейсхолдеры: {yyyy} {MM} {dd} {HH} {mm} {ss}",
+    "auto_purge_label": "Автоудаление сессий через (часов, 0 = никогда)",
+    "image_quality_label": "Качество изображения",
+    "quality_high": "Высокое", "quality_medium": "Среднее", "quality_low": "Низкое",
+    "embed_images_label": "Встраивать изображения в base64 по умолчанию в Markdown",
+    "hotkeys_label": "Горячие клавиши",
+    "hotkeys_display": "Начать: {{start}} · Пауза: {{pause}} · Стоп: {{stop}} · Аннотация: {{annotate}} · Захват: {{capture}}",
+    "language_label": "Язык", "save": "Сохранить", "cancel": "Отмена",
+    "restore_defaults": "Восстановить по умолчанию"
+  },
+  "stepcard": {
+    "click_badge": "клик", "mark_point_hint": "Кликните на изображение...", "mark_point": "Отметить точку",
+    "spotlight_hint": "Перетащите для выбора...", "spotlight": "Spotlight",
+    "remove_spotlight": "Убрать spotlight", "crop_hint": "Перетащите для обрезки...", "crop": "Обрезать изображение",
+    "delete": "Удалить шаг", "log_header": "📋 Лог · {{timestamp}}", "remove_log": "Удалить лог",
+    "log_note_placeholder": "Заметка об этом логе...", "save": "Сохранить", "cancel": "Отмена",
+    "edit_note": "Изменить заметку", "add_note": "Добавить заметку",
+    "annotation_placeholder": "Добавить аннотацию...", "clear": "Очистить", "edit": "Изменить", "annotate": "Аннотировать"
+  },
+  "live_feed": {
+    "title": "Захват в реальном времени", "step_count_one": "1 шаг", "step_count_other": "{{count}} шагов",
+    "waiting": "Ожидание следующего переключения окна..."
+  },
+  "sessions_list": {
+    "title": "Недавние сессии",
+    "empty": "Сохранённых сессий нет. (сессии удаляются по истечении настроенного времени)",
+    "step_count": "{{count}} шагов", "open": "Открыть", "delete": "Удалить"
+  },
+  "step_preview": { "title": "Шаг #{{seq}}", "alt": "Шаг {{seq}}" },
+  "toasts": {
+    "capture_blocked_title": "Захват не выполнен",
+    "capture_blocked_body": "Переключитесь на целевое окно и повторите попытку.",
+    "session_deleted": "Сессия удалена", "export_done": "Экспорт завершён",
+    "open_folder": "Открыть папку", "export_failed": "Ошибка экспорта", "settings_saved": "Настройки сохранены"
+  },
+  "language": {
+    "selector_label": "Язык", "en": "English", "pt-BR": "Português (Brasil)", "es": "Español",
+    "ru": "Русский", "it": "Italiano", "de": "Deutsch", "ja": "日本語", "zh-CN": "中文 (简体)", "fr": "Français"
+  },
+  "errors": {
+    "no_active_session": "Нет активной сессии", "session_already_active": "Сессия уже активна",
+    "session_not_recording": "Сессия не записывает", "session_not_paused": "Сессия не на паузе",
+    "step_not_found": "Шаг не найден", "not_recording": "Не записывает",
+    "no_foreground_window": "Целевое окно не найдено. Сначала переключитесь на нужное окно.",
+    "pdf_removed": "Экспорт PDF удалён. Используйте Markdown."
+  }
+}

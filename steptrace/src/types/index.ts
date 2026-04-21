@@ -67,4 +67,5 @@ export interface AppConfig {
   embed_images_default: boolean;
   export_name_template: string;
   auto_purge_hours: number;
+  language?: string;
 }

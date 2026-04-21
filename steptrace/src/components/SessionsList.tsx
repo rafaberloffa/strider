@@ -1,5 +1,6 @@
 import { Card, Button, Text, Divider, Title3 } from '@fluentui/react-components';
 import { Open24Regular, Delete24Regular } from '@fluentui/react-icons';
+import { useTranslation } from 'react-i18next';
 import type { SessionMeta } from '../types';
 import { formatDuration } from '../utils/format';
 
@@ -10,19 +11,23 @@ interface Props {
 }
 
 export function SessionsList({ sessions, onOpen, onDelete }: Props) {
+  const { t, i18n } = useTranslation();
   if (sessions.length === 0) {
     return (
       <Text size={200} style={{ color: 'var(--colorNeutralForeground3)' }}>
-        Nenhuma sessão salva. (sessões são apagadas após o tempo configurado)
+        {t('sessions_list.empty')}
       </Text>
     );
   }
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 8, width: '100%', maxWidth: 640 }}>
-      <Title3>Sessões recentes</Title3>
+      <Title3>{t('sessions_list.title')}</Title3>
       <Divider />
       {sessions.map(s => {
-        const when = new Date(s.started_at).toLocaleString('pt-BR');
+        const when = new Intl.DateTimeFormat(i18n.language, {
+          year: 'numeric', month: '2-digit', day: '2-digit',
+          hour: '2-digit', minute: '2-digit', second: '2-digit',
+        }).format(new Date(s.started_at));
         const dur = formatDuration(s.started_at, s.ended_at);
         return (
           <Card key={s.id} style={{ padding: 12 }}>
@@ -31,15 +36,15 @@ export function SessionsList({ sessions, onOpen, onDelete }: Props) {
                 <Text weight="semibold">{when}</Text>
                 <br />
                 <Text size={200} style={{ color: 'var(--colorNeutralForeground3)' }}>
-                  {s.step_count} passos {dur && `· ${dur}`}
+                  {t('sessions_list.step_count', { count: s.step_count })} {dur && `· ${dur}`}
                 </Text>
               </div>
-              <Button icon={<Open24Regular />} onClick={() => onOpen(s.id)}>Abrir</Button>
+              <Button icon={<Open24Regular />} onClick={() => onOpen(s.id)}>{t('sessions_list.open')}</Button>
               <Button
                 appearance="subtle"
                 icon={<Delete24Regular />}
                 onClick={() => onDelete(s.id)}
-                title="Apagar"
+                title={t('sessions_list.delete')}
               />
             </div>
           </Card>

@@ -57,9 +57,9 @@ fn icon_from_bytes(bytes: &[u8]) -> Option<tauri::image::Image<'static>> {
 pub fn update_tray_icon(app: &tauri::AppHandle, status: &AppStatus) {
     if let Some(tray) = app.tray_by_id("main") {
         let (label, icon_bytes) = match status {
-            AppStatus::Idle => ("StepTrace — Pronto", ICON_IDLE.get()),
-            AppStatus::Recording => ("StepTrace — ● Gravando", ICON_RECORDING.get()),
-            AppStatus::Paused => ("StepTrace — ⏸ Pausado", ICON_PAUSED.get()),
+            AppStatus::Idle => ("Strider — Pronto", ICON_IDLE.get()),
+            AppStatus::Recording => ("Strider — ● Gravando", ICON_RECORDING.get()),
+            AppStatus::Paused => ("Strider — ⏸ Pausado", ICON_PAUSED.get()),
         };
         let _ = tray.set_tooltip(Some(label));
         if let Some(bytes) = icon_bytes {
@@ -71,7 +71,7 @@ pub fn update_tray_icon(app: &tauri::AppHandle, status: &AppStatus) {
 }
 
 pub fn build_tray(app: &tauri::App) -> tauri::Result<TrayIcon> {
-    let show_item = MenuItem::with_id(app, "show", "Abrir StepTrace", true, None::<&str>)?;
+    let show_item = MenuItem::with_id(app, "show", "Abrir Strider", true, None::<&str>)?;
     let start_item = MenuItem::with_id(app, "start", "Iniciar gravação", true, None::<&str>)?;
     let pause_item = MenuItem::with_id(app, "pause", "Pausar / Retomar", true, None::<&str>)?;
     let stop_item = MenuItem::with_id(app, "stop", "Parar gravação", true, None::<&str>)?;
@@ -88,7 +88,7 @@ pub fn build_tray(app: &tauri::App) -> tauri::Result<TrayIcon> {
 
     TrayIconBuilder::with_id("main")
         .menu(&menu)
-        .tooltip("StepTrace — Pronto")
+        .tooltip("Strider — Pronto")
         .icon(base_icon)
         .on_menu_event(|app, event| match event.id.as_ref() {
             "show" => {

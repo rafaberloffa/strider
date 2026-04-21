@@ -1,6 +1,7 @@
 import { Text, Badge } from '@fluentui/react-components';
 import { ChevronDown20Regular, ChevronUp20Regular } from '@fluentui/react-icons';
 import { convertFileSrc } from '@tauri-apps/api/core';
+import { useTranslation } from 'react-i18next';
 import type { Step } from '../types';
 
 interface Props {
@@ -14,6 +15,7 @@ interface Props {
 export function LiveStepFeed({
   steps, sessionsDir, collapsed, onToggleCollapse, onItemClick,
 }: Props) {
+  const { t, i18n } = useTranslation();
   const recent = steps.slice(-50).slice().reverse();
 
   return (
@@ -27,7 +29,6 @@ export function LiveStepFeed({
       transition: 'height 0.18s ease',
       overflow: 'hidden',
     }}>
-      {/* Header */}
       <div
         onClick={onToggleCollapse}
         style={{
@@ -43,31 +44,30 @@ export function LiveStepFeed({
         }}
       >
         {collapsed ? <ChevronUp20Regular /> : <ChevronDown20Regular />}
-        <Text size={200} weight="semibold">Captura ao vivo</Text>
+        <Text size={200} weight="semibold">{t('live_feed.title')}</Text>
         <Badge appearance="filled" color="informative" size="small">{steps.length}</Badge>
         <Text size={100} style={{ color: 'var(--colorNeutralForeground3)' }}>
-          {steps.length === 1 ? 'passo' : 'passos'}
+          {steps.length === 1 ? t('live_feed.step_count_one') : t('live_feed.step_count_other', { count: steps.length })}
         </Text>
       </div>
 
-      {/* Steps list */}
       {!collapsed && (
         <div style={{ flex: 1, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: 2, padding: 4 }}>
           {recent.length === 0 && (
             <Text size={200} style={{ color: 'var(--colorNeutralForeground3)', padding: '8px 8px' }}>
-              Aguardando próxima mudança de janela...
+              {t('live_feed.waiting')}
             </Text>
           )}
           {recent.map(step => {
             const rawPath = `${sessionsDir}/${step.session_id}/${step.image_path}`.replace(/\\/g, '/');
             const src = convertFileSrc(rawPath, 'asset');
-            const time = new Date(step.timestamp).toLocaleTimeString('pt-BR');
+            const time = new Intl.DateTimeFormat(i18n.language, { hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(new Date(step.timestamp));
             const isClick = step.action_type === 'click';
 
             return (
               <div
                 key={step.id}
-                className="steptrace-fadein"
+                className="strider-fadein"
                 onClick={() => onItemClick(step)}
                 onMouseEnter={e => (e.currentTarget.style.background = 'var(--colorNeutralBackground3)')}
                 onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
@@ -91,7 +91,7 @@ export function LiveStepFeed({
                     <Badge size="small" appearance="outline" color={isClick ? 'danger' : 'informative'}>
                       #{step.sequence}
                     </Badge>
-                    {isClick && <Badge size="small" appearance="filled" color="danger">clique</Badge>}
+                    {isClick && <Badge size="small" appearance="filled" color="danger">{t('stepcard.click_badge')}</Badge>}
                   </div>
                   <Text
                     size={200}

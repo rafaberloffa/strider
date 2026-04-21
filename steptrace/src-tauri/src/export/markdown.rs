@@ -14,7 +14,7 @@ pub fn export(
     let mut md = String::new();
 
     md.push_str(&format!(
-        "# Sessão StepTrace — {}\n\n",
+        "# Sessão Strider — {}\n\n",
         &session.started_at[..10]
     ));
 
@@ -113,7 +113,7 @@ pub fn export(
         md.push_str("---\n\n");
     }
 
-    md.push_str("*Gerado por StepTrace*\n");
+    md.push_str("*Gerado por Strider*\n");
 
     let output_path = Path::new(output_file);
     if let Some(parent) = output_path.parent() {

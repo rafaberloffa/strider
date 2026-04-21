@@ -27,7 +27,7 @@ fn do_capture_step(
         let lock = state.current_session.lock().unwrap();
         lock.as_ref()
             .map(|s| s.id.clone())
-            .ok_or("Nenhuma sessão ativa")?
+            .ok_or("error.no_active_session")?
     };
 
     let sessions_dir = state.sessions_dir.lock().unwrap().clone();
@@ -103,7 +103,7 @@ fn do_capture_step(
 fn do_start_session(state: &AppState) -> Result<Session, String> {
     let mut status = state.status.lock().unwrap();
     if *status != AppStatus::Idle {
-        return Err("Sessão já em andamento".to_string());
+        return Err("error.session_already_active".to_string());
     }
     let new_session = Session::new();
     *state.current_session.lock().unwrap() = Some(new_session.clone());
@@ -116,7 +116,7 @@ fn do_start_session(state: &AppState) -> Result<Session, String> {
 fn do_stop_session(state: &AppState) -> Result<Session, String> {
     let mut status = state.status.lock().unwrap();
     let mut session_lock = state.current_session.lock().unwrap();
-    let session = session_lock.as_mut().ok_or("Nenhuma sessão ativa")?;
+    let session = session_lock.as_mut().ok_or("error.no_active_session")?;
     session.ended_at = Some(chrono::Local::now().to_rfc3339());
     let finished = session.clone();
     *status = AppStatus::Idle;
@@ -181,7 +181,7 @@ fn start_session(state: State<AppState>, app_handle: tauri::AppHandle) -> Result
 fn pause_session(state: State<AppState>, app_handle: tauri::AppHandle) -> Result<(), String> {
     let mut status = state.status.lock().unwrap();
     if *status != AppStatus::Recording {
-        return Err("Sessão não está gravando".to_string());
+        return Err("error.session_not_recording".to_string());
     }
     *status = AppStatus::Paused;
     drop(status);
@@ -199,7 +199,7 @@ fn pause_session(state: State<AppState>, app_handle: tauri::AppHandle) -> Result
 fn resume_session(state: State<AppState>, app_handle: tauri::AppHandle) -> Result<(), String> {
     let mut status = state.status.lock().unwrap();
     if *status != AppStatus::Paused {
-        return Err("Sessão não está pausada".to_string());
+        return Err("error.session_not_paused".to_string());
     }
     *status = AppStatus::Recording;
     drop(status);
@@ -250,12 +250,12 @@ fn delete_step(state: State<AppState>, step_id: String) -> Result<(), String> {
 fn add_annotation(state: State<AppState>, step_id: String, text: String) -> Result<(), String> {
     let trimmed = text.trim().to_string();
     let mut session_lock = state.current_session.lock().unwrap();
-    let session = session_lock.as_mut().ok_or("Nenhuma sessão ativa")?;
+    let session = session_lock.as_mut().ok_or("error.no_active_session")?;
     let step = session
         .steps
         .iter_mut()
         .find(|s| s.id == step_id)
-        .ok_or("Step não encontrado")?;
+        .ok_or("error.step_not_found")?;
     step.annotation = if trimmed.is_empty() { None } else { Some(trimmed) };
     drop(session_lock);
     persist_current(&state);
@@ -269,12 +269,12 @@ fn add_log_snippet(
     log: String,
 ) -> Result<LogSnippet, String> {
     let mut session_lock = state.current_session.lock().unwrap();
-    let session = session_lock.as_mut().ok_or("Nenhuma sessão ativa")?;
+    let session = session_lock.as_mut().ok_or("error.no_active_session")?;
     let step = session
         .steps
         .iter_mut()
         .find(|s| s.id == step_id)
-        .ok_or("Step não encontrado")?;
+        .ok_or("error.step_not_found")?;
     let snippet = LogSnippet {
         text: log,
         note: None,
@@ -293,12 +293,12 @@ fn update_log_note(
     note: Option<String>,
 ) -> Result<Option<LogSnippet>, String> {
     let mut session_lock = state.current_session.lock().unwrap();
-    let session = session_lock.as_mut().ok_or("Nenhuma sessão ativa")?;
+    let session = session_lock.as_mut().ok_or("error.no_active_session")?;
     let step = session
         .steps
         .iter_mut()
         .find(|s| s.id == step_id)
-        .ok_or("Step não encontrado")?;
+        .ok_or("error.step_not_found")?;
     if let Some(ref mut snippet) = step.log_snippet {
         snippet.note = note.filter(|n| !n.trim().is_empty());
     }
@@ -311,12 +311,12 @@ fn update_log_note(
 #[tauri::command]
 fn delete_log_snippet(state: State<AppState>, step_id: String) -> Result<(), String> {
     let mut session_lock = state.current_session.lock().unwrap();
-    let session = session_lock.as_mut().ok_or("Nenhuma sessão ativa")?;
+    let session = session_lock.as_mut().ok_or("error.no_active_session")?;
     let step = session
         .steps
         .iter_mut()
         .find(|s| s.id == step_id)
-        .ok_or("Step não encontrado")?;
+        .ok_or("error.step_not_found")?;
     step.log_snippet = None;
     drop(session_lock);
     persist_current(&state);
@@ -331,12 +331,12 @@ fn add_highlight(
 ) -> Result<(), String> {
     let sessions_dir = state.sessions_dir.lock().unwrap().clone();
     let mut session_lock = state.current_session.lock().unwrap();
-    let session = session_lock.as_mut().ok_or("Nenhuma sessão ativa")?;
+    let session = session_lock.as_mut().ok_or("error.no_active_session")?;
     let step = session
         .steps
         .iter_mut()
         .find(|s| s.id == step_id)
-        .ok_or("Step não encontrado")?;
+        .ok_or("error.step_not_found")?;
     let image_abs = std::path::Path::new(&sessions_dir)
         .join(&step.session_id)
         .join(&step.image_path);
@@ -354,12 +354,12 @@ fn set_spotlight(
     spotlight: Option<Spotlight>,
 ) -> Result<(), String> {
     let mut session_lock = state.current_session.lock().unwrap();
-    let session = session_lock.as_mut().ok_or("Nenhuma sessão ativa")?;
+    let session = session_lock.as_mut().ok_or("error.no_active_session")?;
     let step = session
         .steps
         .iter_mut()
         .find(|s| s.id == step_id)
-        .ok_or("Step não encontrado")?;
+        .ok_or("error.step_not_found")?;
     step.spotlight = spotlight;
     drop(session_lock);
     persist_current(&state);
@@ -377,12 +377,12 @@ fn crop_step_image(
 ) -> Result<(), String> {
     let sessions_dir = state.sessions_dir.lock().unwrap().clone();
     let mut session_lock = state.current_session.lock().unwrap();
-    let session = session_lock.as_mut().ok_or("Nenhuma sessão ativa")?;
+    let session = session_lock.as_mut().ok_or("error.no_active_session")?;
     let step = session
         .steps
         .iter_mut()
         .find(|s| s.id == step_id)
-        .ok_or("Step não encontrado")?;
+        .ok_or("error.step_not_found")?;
     let image_abs = std::path::Path::new(&sessions_dir)
         .join(&step.session_id)
         .join(&step.image_path);
@@ -406,7 +406,7 @@ fn capture_now(
     from_button: bool,
 ) -> Result<Step, String> {
     if *state.status.lock().unwrap() != AppStatus::Recording {
-        return Err("Não está gravando".to_string());
+        return Err("error.not_recording".to_string());
     }
 
     let hwnd = if from_button {
@@ -416,9 +416,7 @@ fn capture_now(
     };
 
     if hwnd == 0 {
-        return Err(
-            "Nenhuma janela alvo encontrada. Alterne para a janela desejada primeiro.".to_string(),
-        );
+        return Err("error.no_foreground_window".to_string());
     }
 
     do_capture_step(&state, &app_handle, hwnd, session::ActionType::Focus, None, false)
@@ -506,7 +504,7 @@ fn export_session(
                 written.push(out.to_string_lossy().to_string());
             }
             "pdf" => {
-                return Err("Exportação PDF removida. Use Markdown.".to_string());
+                return Err("error.pdf_removed".to_string());
             }
             _ => {}
         }
@@ -773,18 +771,18 @@ fn register_hotkeys(app: &tauri::App) {
                     }
                     "capture" => {
                         if *state.status.lock().unwrap() != AppStatus::Recording {
-                            let _ = handle.emit("capture-blocked", "Inicie uma gravação primeiro.");
+                            let _ = handle.emit("capture-blocked", "capture_blocked.not_recording");
                             return;
                         }
                         let hwnd = get_foreground_hwnd();
                         if hwnd == 0 {
-                            let _ = handle.emit("capture-blocked", "Nenhuma janela em foreground.");
+                            let _ = handle.emit("capture-blocked", "capture_blocked.no_foreground");
                             return;
                         }
                         if is_own_process_hwnd(hwnd) {
                             let _ = handle.emit(
                                 "capture-blocked",
-                                "StepTrace está em foco. Alterne para a janela alvo antes do atalho.",
+                                "capture_blocked.own_focus",
                             );
                             return;
                         }
@@ -796,7 +794,7 @@ fn register_hotkeys(app: &tauri::App) {
                             None,
                             false,
                         ) {
-                            let _ = handle.emit("capture-blocked", format!("Falha: {}", e));
+                            let _ = handle.emit("capture-blocked", "capture_blocked.capture_failed");
                             log::warn!("capture hotkey falhou: {}", e);
                         }
                     }
@@ -827,7 +825,7 @@ pub fn run() {
                 .path()
                 .app_data_dir()
                 .unwrap_or_else(|_| std::path::PathBuf::from("."))
-                .join("StepTrace");
+                .join("Strider");
             let sessions_dir = base_dir.join("sessions");
             std::fs::create_dir_all(&sessions_dir).ok();
             let sessions_dir_str = sessions_dir.to_string_lossy().to_string();
@@ -897,5 +895,5 @@ pub fn run() {
             open_path,
         ])
         .run(tauri::generate_context!())
-        .expect("erro ao iniciar StepTrace");
+        .expect("erro ao iniciar Strider");
 }
