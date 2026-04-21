@@ -1,0 +1,17 @@
+# Local tooling
+.cursor/
+.claude/
+
+# App (Tauri + Vite)
+steptrace/node_modules/
+steptrace/dist/
+steptrace/src-tauri/target/
+
+# OS / editor
+Thumbs.db
+.DS_Store
+*.swp
+
+# Secrets
+.env
+.env.*
