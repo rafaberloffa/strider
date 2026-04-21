@@ -35,13 +35,13 @@ O Strider gera exatamente isso, com zero atrito:
 
 Strider foi desenhado para ser **seguro de instalar**. Ele não:
 
-- ❌ **Não registra teclas digitadas.** Nenhum `WH_KEYBOARD_LL`, nenhum keylogger.
+- ✕ **Não registra teclas digitadas.** Nenhum `WH_KEYBOARD_LL`, nenhum keylogger.
   Apenas `RegisterHotKey` do Windows (as 4 combinações configuradas).
-- ❌ **Não envia dados pela rede.** Não há `reqwest`, `hyper`, `ureq` ou qualquer
+- ✕ **Não envia dados pela rede.** Não há `reqwest`, `hyper`, `ureq` ou qualquer
   crate HTTP no `Cargo.toml`. 100% local.
-- ❌ **Não captura a tela inteira.** Só a bounding box da janela em foco.
-- ❌ **Não lê conteúdo de campos de senha, credenciais, ou do que você digita.**
-- ❌ **Não lê o clipboard silenciosamente.** A detecção de logs no clipboard é
+- ✕ **Não captura a tela inteira.** Só a bounding box da janela em foco.
+- ✕ **Não lê conteúdo de campos de senha, credenciais, ou do que você digita.**
+- ✕ **Não lê o clipboard silenciosamente.** A detecção de logs no clipboard é
   *opt-in* e cada trecho detectado pede confirmação explícita via toast antes
   de ser salvo.
 
