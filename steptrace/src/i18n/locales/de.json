@@ -61,7 +61,7 @@
   "stepcard": {
     "click_badge": "Klick", "mark_point_hint": "Auf Bild klicken...", "mark_point": "Punkt markieren",
     "spotlight_hint": "Zum Auswählen ziehen...", "spotlight": "Spotlight",
-    "remove_spotlight": "Spotlight entfernen", "crop_hint": "Zum Zuschneiden ziehen...", "crop": "Bild zuschneiden",
+    "remove_spotlight": "Spotlight entfernen", "crop_hint": "Zum Zuschneiden ziehen...", "crop": "Bild zuschneiden", "duplicate": "Schritt duplizieren",
     "delete": "Schritt entfernen", "log_header": "📋 Log · {{timestamp}}", "remove_log": "Log entfernen",
     "log_note_placeholder": "Notiz zu diesem Log...", "save": "Speichern", "cancel": "Abbrechen",
     "edit_note": "Notiz bearbeiten", "add_note": "Notiz hinzufügen",
@@ -92,6 +92,9 @@
     "session_not_recording": "Sitzung nimmt nicht auf", "session_not_paused": "Sitzung ist nicht pausiert",
     "step_not_found": "Schritt nicht gefunden", "not_recording": "Nimmt nicht auf",
     "no_foreground_window": "Kein Zielfenster gefunden. Wechseln Sie zuerst zum gewünschten Fenster.",
+    "create_dir_failed": "Verzeichnis konnte nicht erstellt werden: {{message}}",
+    "copy_image_failed": "Bild konnte nicht kopiert werden: {{message}}",
+    "capture_failed": "Aufnahme fehlgeschlagen.",
     "pdf_removed": "PDF-Export wurde entfernt. Verwenden Sie Markdown."
   }
 }

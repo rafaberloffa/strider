@@ -30,7 +30,7 @@ export default function App() {
     status, session, steps, sessionsDir, config, recentSessions,
     startRecording, pauseRecording, resumeRecording, stopRecording,
     deleteStep, addAnnotation, addLogSnippet, updateLogNote, deleteLogSnippet,
-    addHighlight, setSpotlight, cropStepImage, captureNow,
+    addHighlight, setSpotlight, cropStepImage, captureNow, duplicateStep, // Novo
     loadSession, deleteSession, saveConfig, loadRecentSessions, clearSession,
   } = useSession();
 
@@ -278,6 +278,7 @@ export default function App() {
             onUpdateLogNote={updateLogNote}
             onDeleteLogSnippet={deleteLogSnippet}
             onExport={() => setExportOpen(true)}
+            onDuplicate={duplicateStep} // Passando duplicateStep
           />
         )}
         {view === 'settings' && config && (

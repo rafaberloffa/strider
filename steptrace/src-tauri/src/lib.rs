@@ -395,6 +395,84 @@ fn crop_step_image(
 }
 
 #[tauri::command]
+fn duplicate_step(state: State<AppState>, original_step_id: String) -> Result<Step, String> {
+    // 1. Obter a sessão atual
+    let mut session_lock = state.current_session.lock().unwrap();
+    let session = session_lock.as_mut().ok_or("error.no_active_session".to_string())?;
+
+    // 2. Encontrar o step original
+    let original_step_idx = session.steps.iter().position(|s| s.id == original_step_id)
+        .ok_or("error.step_not_found".to_string())?;
+    let original_step = session.steps[original_step_idx].clone();
+
+    // 3. Preparar dados para o novo step
+    let new_id_sequence = {
+        let mut c = state.step_counter.lock().unwrap();
+        *c += 1;
+        *c
+    };
+    let new_step_id = format!("step_{:03}", new_id_sequence);
+    let new_image_filename = format!("{}.png", new_step_id);
+    let inserted_sequence = original_step.sequence + 1;
+
+    // Caminhos para a imagem original e nova
+    let sessions_dir = state.sessions_dir.lock().unwrap().clone();
+    let original_image_path = std::path::Path::new(&sessions_dir)
+        .join(&original_step.session_id)
+        .join(&original_step.image_path);
+    let new_image_dir = std::path::Path::new(&sessions_dir)
+        .join(&session.id)
+        .join("steps");
+    let new_image_full_path = new_image_dir.join(&new_image_filename);
+
+    // 4. Duplicar o arquivo de imagem
+    if let Err(e) = std::fs::create_dir_all(&new_image_dir) {
+        *state.step_counter.lock().unwrap() -= 1;
+        return Err(format!("error.create_dir_failed: {}", e));
+    }
+    if let Err(e) = std::fs::copy(&original_image_path, &new_image_full_path) {
+        *state.step_counter.lock().unwrap() -= 1;
+        return Err(format!("error.copy_image_failed: {}", e));
+    }
+
+    // 5. Criar o novo Step
+    let new_step = Step {
+        id: new_step_id,
+        session_id: session.id.clone(),
+        timestamp: chrono::Local::now().to_rfc3339(),
+        sequence: inserted_sequence,
+        action_type: original_step.action_type,
+        process_name: original_step.process_name,
+        window_title: original_step.window_title,
+        monitor_id: original_step.monitor_id,
+        monitor_label: original_step.monitor_label,
+        image_path: format!("steps/{}", new_image_filename),
+        annotation: original_step.annotation.clone(),
+        log_snippet: original_step.log_snippet.clone(),
+        highlight: original_step.highlight.clone(),
+        spotlight: original_step.spotlight.clone(),
+    };
+
+    // 6. Inserir o novo step na sessão (imediatamente após o original)
+    session.steps.insert(original_step_idx + 1, new_step.clone());
+
+    // Mantém ordem de sequência consistente com a ordem visual da sessão.
+    for step in session.steps.iter_mut().skip(original_step_idx + 2) {
+        step.sequence += 1;
+    }
+
+    // Recalibra o contador para evitar colisões ao carregar sessões antigas.
+    let max_sequence = session.steps.iter().map(|s| s.sequence).max().unwrap_or(0);
+
+    // 7. Persistir a sessão atualizada no disco
+    drop(session_lock);
+    *state.step_counter.lock().unwrap() = max_sequence;
+    persist_current(&state);
+
+    Ok(new_step)
+}
+
+#[tauri::command]
 fn set_highlight_mode(state: State<AppState>, active: bool) {
     *state.highlight_mode.lock().unwrap() = active;
 }
@@ -452,7 +530,9 @@ fn get_all_sessions(state: State<AppState>) -> Vec<SessionMeta> {
 fn load_session(state: State<AppState>, session_id: String) -> Result<Session, String> {
     let sessions_dir = state.sessions_dir.lock().unwrap().clone();
     let s = load_session_from_disk(&sessions_dir, &session_id)?;
+    let max_sequence = s.steps.iter().map(|step| step.sequence).max().unwrap_or(0);
     *state.current_session.lock().unwrap() = Some(s.clone());
+    *state.step_counter.lock().unwrap() = max_sequence;
     Ok(s)
 }
 
@@ -883,6 +963,7 @@ pub fn run() {
             add_highlight,
             set_spotlight,
             crop_step_image,
+            duplicate_step, // Novo comando para duplicar steps
             set_highlight_mode,
             capture_now,
             get_config,

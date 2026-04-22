@@ -61,7 +61,7 @@
   "stepcard": {
     "click_badge": "clic", "mark_point_hint": "Haga clic en la imagen...", "mark_point": "Marcar punto",
     "spotlight_hint": "Arrastre para seleccionar...", "spotlight": "Spotlight",
-    "remove_spotlight": "Eliminar spotlight", "crop_hint": "Arrastre para recortar...", "crop": "Recortar imagen",
+    "remove_spotlight": "Eliminar spotlight", "crop_hint": "Arrastre para recortar...", "crop": "Recortar imagen", "duplicate": "Duplicar paso",
     "delete": "Eliminar paso", "log_header": "📋 Log · {{timestamp}}", "remove_log": "Eliminar log",
     "log_note_placeholder": "Nota sobre este log...", "save": "Guardar", "cancel": "Cancelar",
     "edit_note": "Editar nota", "add_note": "Agregar nota",
@@ -92,6 +92,9 @@
     "session_not_recording": "La sesión no está grabando", "session_not_paused": "La sesión no está pausada",
     "step_not_found": "Paso no encontrado", "not_recording": "No está grabando",
     "no_foreground_window": "No se encontró ventana de destino. Cambie a la ventana deseada primero.",
+    "create_dir_failed": "Error al crear directorio: {{message}}",
+    "copy_image_failed": "Error al copiar imagen: {{message}}",
+    "capture_failed": "Fallo de captura.",
     "pdf_removed": "La exportación PDF fue eliminada. Use Markdown."
   }
 }

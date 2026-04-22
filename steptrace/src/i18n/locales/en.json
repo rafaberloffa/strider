@@ -92,6 +92,7 @@
     "remove_spotlight": "Remove spotlight",
     "crop_hint": "Drag to crop...",
     "crop": "Crop image",
+    "duplicate": "Duplicate step",
     "delete": "Remove step",
     "log_header": "📋 Log · {{timestamp}}",
     "remove_log": "Remove log",
@@ -151,6 +152,9 @@
     "step_not_found": "Step not found",
     "not_recording": "Not recording",
     "no_foreground_window": "No target window found. Switch to the desired window first.",
+    "create_dir_failed": "Failed to create directory: {{message}}",
+    "copy_image_failed": "Failed to copy image: {{message}}",
+    "capture_failed": "Capture failed.",
     "pdf_removed": "PDF export has been removed. Use Markdown."
   }
 }

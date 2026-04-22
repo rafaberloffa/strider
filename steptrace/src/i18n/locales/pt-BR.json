@@ -92,6 +92,7 @@
     "remove_spotlight": "Remover spotlight",
     "crop_hint": "Arraste para recortar...",
     "crop": "Recortar imagem",
+    "duplicate": "Duplicar passo",
     "delete": "Remover passo",
     "log_header": "📋 Log · {{timestamp}}",
     "remove_log": "Remover log",
@@ -151,6 +152,9 @@
     "step_not_found": "Passo não encontrado",
     "not_recording": "Não está gravando",
     "no_foreground_window": "Nenhuma janela alvo encontrada. Alterne para a janela desejada primeiro.",
+    "create_dir_failed": "Falha ao criar diretório: {{message}}",
+    "copy_image_failed": "Falha ao copiar imagem: {{message}}",
+    "capture_failed": "Falha na captura.",
     "pdf_removed": "Exportação PDF foi removida. Use Markdown."
   }
 }

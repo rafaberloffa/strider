@@ -1,97 +1,101 @@
-{
+﻿{
   "app": { "name": "Strider" },
-  "status": { "idle": "就绪", "recording": "● 录制中", "paused": "⏸ 已暂停" },
+  "status": { "idle": "å°±ç»ª", "recording": "â— å½•åˆ¶ä¸­", "paused": "â¸ å·²æš‚åœ" },
   "session": {
-    "start": "开始", "pause": "暂停", "resume": "继续", "stop": "停止",
-    "capture_now": "截图", "back": "← 返回",
-    "step_singular": "步骤", "step_plural": "步骤",
-    "step_count": "{{count}} 步骤", "step_count_plural": "{{count}} 步骤"
+    "start": "å¼€å§‹", "pause": "æš‚åœ", "resume": "ç»§ç»­", "stop": "åœæ­¢",
+    "capture_now": "æˆªå›¾", "back": "â† è¿”å›ž",
+    "step_singular": "æ­¥éª¤", "step_plural": "æ­¥éª¤",
+    "step_count": "{{count}} æ­¥éª¤", "step_count_plural": "{{count}} æ­¥éª¤"
   },
   "toolbar": {
-    "start_tooltip": "开始录制  ·  Win+Shift+R",
-    "capture_tooltip": "立即截图  ·  Win+Shift+C",
-    "pause_tooltip": "暂停  ·  Win+Shift+P",
-    "stop_tooltip": "停止录制  ·  Win+Shift+S",
-    "resume_tooltip": "继续  ·  Win+Shift+P",
-    "open_folder_tooltip": "打开会话文件夹",
-    "settings_tooltip": "设置"
+    "start_tooltip": "å¼€å§‹å½•åˆ¶  Â·  Win+Shift+R",
+    "capture_tooltip": "ç«‹å³æˆªå›¾  Â·  Win+Shift+C",
+    "pause_tooltip": "æš‚åœ  Â·  Win+Shift+P",
+    "stop_tooltip": "åœæ­¢å½•åˆ¶  Â·  Win+Shift+S",
+    "resume_tooltip": "ç»§ç»­  Â·  Win+Shift+P",
+    "open_folder_tooltip": "æ‰“å¼€ä¼šè¯æ–‡ä»¶å¤¹",
+    "settings_tooltip": "è®¾ç½®"
   },
   "home": {
-    "tagline": "点击「开始」或按 Win+Shift+R 开始录制。",
-    "status_recording": "● 录制中", "status_paused": "⏸ 已暂停",
-    "live_step_count_one": "已捕获 1 个步骤", "live_step_count_other": "已捕获 {{count}} 个步骤",
-    "waiting": "等待下一次窗口切换...",
-    "paused_hint": "截图已暂停。继续录制请点击「继续」。",
-    "last_step": "最后步骤：#{{seq}}"
+    "tagline": "ç‚¹å‡»ã€Œå¼€å§‹ã€æˆ–æŒ‰ Win+Shift+R å¼€å§‹å½•åˆ¶ã€‚",
+    "status_recording": "â— å½•åˆ¶ä¸­", "status_paused": "â¸ å·²æš‚åœ",
+    "live_step_count_one": "å·²æ•èŽ· 1 ä¸ªæ­¥éª¤", "live_step_count_other": "å·²æ•èŽ· {{count}} ä¸ªæ­¥éª¤",
+    "waiting": "ç­‰å¾…ä¸‹ä¸€æ¬¡çª—å£åˆ‡æ¢...",
+    "paused_hint": "æˆªå›¾å·²æš‚åœã€‚ç»§ç»­å½•åˆ¶è¯·ç‚¹å‡»ã€Œç»§ç»­ã€ã€‚",
+    "last_step": "æœ€åŽæ­¥éª¤ï¼š#{{seq}}"
   },
   "review": {
-    "title": "会话回顾",
-    "step_count": "{{count}} 步骤", "step_count_plural": "{{count}} 步骤",
-    "duration": "{{min}}分 {{sec}}秒",
-    "export": "导出", "export_disabled_title": "没有可导出的步骤",
-    "export_title": "导出会话",
-    "empty_title": "未捕获步骤",
-    "empty_hint": "本次会话未检测到焦点切换。请开始新录制 (Win+Shift+R) 并切换窗口以捕获步骤。"
+    "title": "ä¼šè¯å›žé¡¾",
+    "step_count": "{{count}} æ­¥éª¤", "step_count_plural": "{{count}} æ­¥éª¤",
+    "duration": "{{min}}åˆ† {{sec}}ç§’",
+    "export": "å¯¼å‡º", "export_disabled_title": "æ²¡æœ‰å¯å¯¼å‡ºçš„æ­¥éª¤",
+    "export_title": "å¯¼å‡ºä¼šè¯",
+    "empty_title": "æœªæ•èŽ·æ­¥éª¤",
+    "empty_hint": "æœ¬æ¬¡ä¼šè¯æœªæ£€æµ‹åˆ°ç„¦ç‚¹åˆ‡æ¢ã€‚è¯·å¼€å§‹æ–°å½•åˆ¶ (Win+Shift+R) å¹¶åˆ‡æ¢çª—å£ä»¥æ•èŽ·æ­¥éª¤ã€‚"
   },
   "export": {
-    "title": "导出会话 (Markdown)",
-    "embed_images": "将图像嵌入 base64（推荐用于 AI）",
-    "filename_label": "文件名（不含扩展名）",
+    "title": "å¯¼å‡ºä¼šè¯ (Markdown)",
+    "embed_images": "å°†å›¾åƒåµŒå…¥ base64ï¼ˆæŽ¨èç”¨äºŽ AIï¼‰",
+    "filename_label": "æ–‡ä»¶åï¼ˆä¸å«æ‰©å±•åï¼‰",
     "filename_placeholder": "my_export",
-    "folder_label": "目标文件夹", "folder_placeholder": "点击「选择...」",
-    "choose_folder": "选择...", "choose_folder_dialog": "选择目标文件夹",
-    "cancel": "取消", "exporting": "导出中...", "export": "导出",
-    "error_no_folder": "请选择目标文件夹。",
-    "error_no_filename": "请输入文件名。"
+    "folder_label": "ç›®æ ‡æ–‡ä»¶å¤¹", "folder_placeholder": "ç‚¹å‡»ã€Œé€‰æ‹©...ã€",
+    "choose_folder": "é€‰æ‹©...", "choose_folder_dialog": "é€‰æ‹©ç›®æ ‡æ–‡ä»¶å¤¹",
+    "cancel": "å–æ¶ˆ", "exporting": "å¯¼å‡ºä¸­...", "export": "å¯¼å‡º",
+    "error_no_folder": "è¯·é€‰æ‹©ç›®æ ‡æ–‡ä»¶å¤¹ã€‚",
+    "error_no_filename": "è¯·è¾“å…¥æ–‡ä»¶åã€‚"
   },
   "settings": {
-    "title": "设置", "sessions_dir_label": "会话文件夹",
-    "sessions_dir_open": "打开",
-    "export_template_label": "导出名称模板",
-    "export_template_hint": "占位符：{yyyy} {MM} {dd} {HH} {mm} {ss}",
-    "auto_purge_label": "自动删除会话的时间（小时，0 = 从不）",
-    "image_quality_label": "图像质量",
-    "quality_high": "高", "quality_medium": "中", "quality_low": "低",
-    "embed_images_label": "默认在 Markdown 中将图像嵌入 base64",
-    "hotkeys_label": "快捷键",
-    "hotkeys_display": "开始：{{start}} · 暂停：{{pause}} · 停止：{{stop}} · 注释：{{annotate}} · 截图：{{capture}}",
-    "language_label": "语言", "save": "保存", "cancel": "取消",
-    "restore_defaults": "恢复默认设置"
+    "title": "è®¾ç½®", "sessions_dir_label": "ä¼šè¯æ–‡ä»¶å¤¹",
+    "sessions_dir_open": "æ‰“å¼€",
+    "export_template_label": "å¯¼å‡ºåç§°æ¨¡æ¿",
+    "export_template_hint": "å ä½ç¬¦ï¼š{yyyy} {MM} {dd} {HH} {mm} {ss}",
+    "auto_purge_label": "è‡ªåŠ¨åˆ é™¤ä¼šè¯çš„æ—¶é—´ï¼ˆå°æ—¶ï¼Œ0 = ä»Žä¸ï¼‰",
+    "image_quality_label": "å›¾åƒè´¨é‡",
+    "quality_high": "é«˜", "quality_medium": "ä¸­", "quality_low": "ä½Ž",
+    "embed_images_label": "é»˜è®¤åœ¨ Markdown ä¸­å°†å›¾åƒåµŒå…¥ base64",
+    "hotkeys_label": "å¿«æ·é”®",
+    "hotkeys_display": "å¼€å§‹ï¼š{{start}} Â· æš‚åœï¼š{{pause}} Â· åœæ­¢ï¼š{{stop}} Â· æ³¨é‡Šï¼š{{annotate}} Â· æˆªå›¾ï¼š{{capture}}",
+    "language_label": "è¯­è¨€", "save": "ä¿å­˜", "cancel": "å–æ¶ˆ",
+    "restore_defaults": "æ¢å¤é»˜è®¤è®¾ç½®"
   },
   "stepcard": {
-    "click_badge": "点击", "mark_point_hint": "点击图像...", "mark_point": "标记点",
-    "spotlight_hint": "拖动以选择...", "spotlight": "聚焦",
-    "remove_spotlight": "删除聚焦", "crop_hint": "拖动以裁剪...", "crop": "裁剪图像",
-    "delete": "删除步骤", "log_header": "📋 日志 · {{timestamp}}", "remove_log": "删除日志",
-    "log_note_placeholder": "关于此日志的备注...", "save": "保存", "cancel": "取消",
-    "edit_note": "编辑备注", "add_note": "添加备注",
-    "annotation_placeholder": "添加注释...", "clear": "清除", "edit": "编辑", "annotate": "注释"
+    "click_badge": "ç‚¹å‡»", "mark_point_hint": "ç‚¹å‡»å›¾åƒ...", "mark_point": "æ ‡è®°ç‚¹",
+    "spotlight_hint": "æ‹–åŠ¨ä»¥é€‰æ‹©...", "spotlight": "èšç„¦",
+    "remove_spotlight": "åˆ é™¤èšç„¦", "crop_hint": "æ‹–åŠ¨ä»¥è£å‰ª...", "crop": "è£å‰ªå›¾åƒ", "duplicate": "Duplicate step",
+    "delete": "åˆ é™¤æ­¥éª¤", "log_header": "ðŸ“‹ æ—¥å¿— Â· {{timestamp}}", "remove_log": "åˆ é™¤æ—¥å¿—",
+    "log_note_placeholder": "å…³äºŽæ­¤æ—¥å¿—çš„å¤‡æ³¨...", "save": "ä¿å­˜", "cancel": "å–æ¶ˆ",
+    "edit_note": "ç¼–è¾‘å¤‡æ³¨", "add_note": "æ·»åŠ å¤‡æ³¨",
+    "annotation_placeholder": "æ·»åŠ æ³¨é‡Š...", "clear": "æ¸…é™¤", "edit": "ç¼–è¾‘", "annotate": "æ³¨é‡Š"
   },
   "live_feed": {
-    "title": "实时截图", "step_count_one": "1 步骤", "step_count_other": "{{count}} 步骤",
-    "waiting": "等待下一次窗口切换..."
+    "title": "å®žæ—¶æˆªå›¾", "step_count_one": "1 æ­¥éª¤", "step_count_other": "{{count}} æ­¥éª¤",
+    "waiting": "ç­‰å¾…ä¸‹ä¸€æ¬¡çª—å£åˆ‡æ¢..."
   },
   "sessions_list": {
-    "title": "最近会话",
-    "empty": "没有已保存的会话。（会话将在配置的时间后删除）",
-    "step_count": "{{count}} 步骤", "open": "打开", "delete": "删除"
+    "title": "æœ€è¿‘ä¼šè¯",
+    "empty": "æ²¡æœ‰å·²ä¿å­˜çš„ä¼šè¯ã€‚ï¼ˆä¼šè¯å°†åœ¨é…ç½®çš„æ—¶é—´åŽåˆ é™¤ï¼‰",
+    "step_count": "{{count}} æ­¥éª¤", "open": "æ‰“å¼€", "delete": "åˆ é™¤"
   },
-  "step_preview": { "title": "步骤 #{{seq}}", "alt": "步骤 {{seq}}" },
+  "step_preview": { "title": "æ­¥éª¤ #{{seq}}", "alt": "æ­¥éª¤ {{seq}}" },
   "toasts": {
-    "capture_blocked_title": "未执行截图",
-    "capture_blocked_body": "请切换到目标窗口后重试。",
-    "session_deleted": "会话已删除", "export_done": "导出完成",
-    "open_folder": "打开文件夹", "export_failed": "导出失败", "settings_saved": "设置已保存"
+    "capture_blocked_title": "æœªæ‰§è¡Œæˆªå›¾",
+    "capture_blocked_body": "è¯·åˆ‡æ¢åˆ°ç›®æ ‡çª—å£åŽé‡è¯•ã€‚",
+    "session_deleted": "ä¼šè¯å·²åˆ é™¤", "export_done": "å¯¼å‡ºå®Œæˆ",
+    "open_folder": "æ‰“å¼€æ–‡ä»¶å¤¹", "export_failed": "å¯¼å‡ºå¤±è´¥", "settings_saved": "è®¾ç½®å·²ä¿å­˜"
   },
   "language": {
-    "selector_label": "语言", "en": "English", "pt-BR": "Português (Brasil)", "es": "Español",
-    "ru": "Русский", "it": "Italiano", "de": "Deutsch", "ja": "日本語", "zh-CN": "中文 (简体)", "fr": "Français"
+    "selector_label": "è¯­è¨€", "en": "English", "pt-BR": "PortuguÃªs (Brasil)", "es": "EspaÃ±ol",
+    "ru": "Ð ÑƒÑÑÐºÐ¸Ð¹", "it": "Italiano", "de": "Deutsch", "ja": "æ—¥æœ¬èªž", "zh-CN": "ä¸­æ–‡ (ç®€ä½“)", "fr": "FranÃ§ais"
   },
   "errors": {
-    "no_active_session": "没有活跃会话", "session_already_active": "会话已在进行中",
-    "session_not_recording": "会话未在录制", "session_not_paused": "会话未暂停",
-    "step_not_found": "找不到步骤", "not_recording": "未在录制",
-    "no_foreground_window": "未找到目标窗口。请先切换到所需窗口。",
-    "pdf_removed": "PDF 导出已移除。请使用 Markdown。"
+    "no_active_session": "æ²¡æœ‰æ´»è·ƒä¼šè¯", "session_already_active": "ä¼šè¯å·²åœ¨è¿›è¡Œä¸­",
+    "session_not_recording": "ä¼šè¯æœªåœ¨å½•åˆ¶", "session_not_paused": "ä¼šè¯æœªæš‚åœ",
+    "step_not_found": "æ‰¾ä¸åˆ°æ­¥éª¤", "not_recording": "æœªåœ¨å½•åˆ¶",
+    "no_foreground_window": "æœªæ‰¾åˆ°ç›®æ ‡çª—å£ã€‚è¯·å…ˆåˆ‡æ¢åˆ°æ‰€éœ€çª—å£ã€‚",
+    "create_dir_failed": "åˆ›å»ºç›®å½•å¤±è´¥ï¼š{{message}}",
+    "copy_image_failed": "å¤åˆ¶å›¾åƒå¤±è´¥ï¼š{{message}}",
+    "capture_failed": "æˆªå›¾å¤±è´¥ã€‚",
+    "pdf_removed": "PDF å¯¼å‡ºå·²ç§»é™¤ã€‚è¯·ä½¿ç”¨ Markdownã€‚"
   }
 }
+

@@ -16,11 +16,12 @@ interface Props {
   onUpdateLogNote: (id: string, note: string | undefined) => void;
   onDeleteLogSnippet: (id: string) => void;
   onExport: () => void;
+  onDuplicate: (id: string) => void;
 }
 
 export function ReviewPanel({
   session, steps, sessionsDir, onDelete, onAnnotate, onHighlight, onSpotlight,
-  onCrop, onUpdateLogNote, onDeleteLogSnippet, onExport,
+  onCrop, onUpdateLogNote, onDeleteLogSnippet, onExport, onDuplicate,
 }: Props) {
   const { t } = useTranslation();
   const duration = session.ended_at
@@ -90,6 +91,7 @@ export function ReviewPanel({
             onCrop={onCrop}
             onUpdateLogNote={onUpdateLogNote}
             onDeleteLogSnippet={onDeleteLogSnippet}
+            onDuplicate={onDuplicate}
           />
         ))
       )}

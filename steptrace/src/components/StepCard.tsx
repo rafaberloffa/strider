@@ -4,7 +4,7 @@ import {
 } from '@fluentui/react-components';
 import {
   Delete24Regular, Note24Regular, Dismiss20Regular,
-  PaintBrush24Regular, Crop24Regular, Dismiss16Regular, ZoomIn24Regular,
+  PaintBrush24Regular, Crop24Regular, Dismiss16Regular, ZoomIn24Regular, Copy24Regular,
 } from '@fluentui/react-icons';
 import { convertFileSrc } from '@tauri-apps/api/core';
 import { useTranslation } from 'react-i18next';
@@ -19,6 +19,7 @@ interface Props {
   onCrop: (id: string, x: number, y: number, w: number, h: number) => Promise<void>;
   onUpdateLogNote: (id: string, note: string | undefined) => void;
   onDeleteLogSnippet: (id: string) => void;
+  onDuplicate: (id: string) => void;
   sessionsDir: string;
 }
 
@@ -26,7 +27,7 @@ type Mode = 'none' | 'highlight' | 'spotlight' | 'crop';
 
 export function StepCard({
   step, onDelete, onAnnotate, onHighlight, onSpotlight, onCrop,
-  onUpdateLogNote, onDeleteLogSnippet, sessionsDir,
+  onUpdateLogNote, onDeleteLogSnippet, sessionsDir, onDuplicate,
 }: Props) {
   const { t, i18n } = useTranslation();
   const [editing, setEditing] = useState(false);
@@ -172,6 +173,13 @@ export function StepCard({
                 appearance={mode === 'crop' ? 'primary' : 'subtle'}
                 icon={<Crop24Regular />}
                 onClick={() => setMode(m => m === 'crop' ? 'none' : 'crop')}
+              />
+            </Tooltip>
+            <Tooltip content={t('stepcard.duplicate')} relationship="label">
+              <Button
+                appearance="subtle"
+                icon={<Copy24Regular />}
+                onClick={() => onDuplicate(step.id)}
               />
             </Tooltip>
             <Tooltip content={t('stepcard.delete')} relationship="label">

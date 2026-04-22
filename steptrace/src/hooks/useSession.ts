@@ -130,6 +130,23 @@ export function useSession() {
     } catch (e) { setError(String(e)); }
   }, []);
 
+  const duplicateStep = useCallback(async (stepId: string) => {
+    try {
+      const newStep = await invoke<Step>('duplicate_step', { originalStepId: stepId });
+      setSteps(prev => {
+        const originalIndex = prev.findIndex(s => s.id === stepId);
+        if (originalIndex !== -1) {
+          const newSteps = [...prev];
+          newSteps.splice(originalIndex + 1, 0, newStep);
+          return newSteps;
+        }
+        return prev;
+      });
+    } catch (e) {
+      setError(String(e));
+    }
+  }, []);
+
   const addHighlight = useCallback(async (stepId: string, highlight: Highlight) => {
     try {
       await invoke('add_highlight', { stepId, highlight });
@@ -187,7 +204,7 @@ export function useSession() {
     status, session, steps, error, sessionsDir, config, recentSessions,
     startRecording, pauseRecording, resumeRecording, stopRecording,
     deleteStep, addAnnotation, addLogSnippet, updateLogNote, deleteLogSnippet,
-    addHighlight, setSpotlight, cropStepImage, captureNow,
+    addHighlight, setSpotlight, cropStepImage, captureNow, duplicateStep,
     loadSession, deleteSession, saveConfig, loadRecentSessions, clearSession,
   };
 }

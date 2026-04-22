@@ -1,97 +1,101 @@
-{
+﻿{
   "app": { "name": "Strider" },
-  "status": { "idle": "待機中", "recording": "● 録画中", "paused": "⏸ 一時停止" },
+  "status": { "idle": "å¾…æ©Ÿä¸­", "recording": "â— éŒ²ç”»ä¸­", "paused": "â¸ ä¸€æ™‚åœæ­¢" },
   "session": {
-    "start": "開始", "pause": "一時停止", "resume": "再開", "stop": "停止",
-    "capture_now": "キャプチャ", "back": "← 戻る",
-    "step_singular": "ステップ", "step_plural": "ステップ",
-    "step_count": "{{count}} ステップ", "step_count_plural": "{{count}} ステップ"
+    "start": "é–‹å§‹", "pause": "ä¸€æ™‚åœæ­¢", "resume": "å†é–‹", "stop": "åœæ­¢",
+    "capture_now": "ã‚­ãƒ£ãƒ—ãƒãƒ£", "back": "â† æˆ»ã‚‹",
+    "step_singular": "ã‚¹ãƒ†ãƒƒãƒ—", "step_plural": "ã‚¹ãƒ†ãƒƒãƒ—",
+    "step_count": "{{count}} ã‚¹ãƒ†ãƒƒãƒ—", "step_count_plural": "{{count}} ã‚¹ãƒ†ãƒƒãƒ—"
   },
   "toolbar": {
-    "start_tooltip": "録画開始  ·  Win+Shift+R",
-    "capture_tooltip": "今すぐキャプチャ  ·  Win+Shift+C",
-    "pause_tooltip": "一時停止  ·  Win+Shift+P",
-    "stop_tooltip": "録画停止  ·  Win+Shift+S",
-    "resume_tooltip": "再開  ·  Win+Shift+P",
-    "open_folder_tooltip": "セッションフォルダを開く",
-    "settings_tooltip": "設定"
+    "start_tooltip": "éŒ²ç”»é–‹å§‹  Â·  Win+Shift+R",
+    "capture_tooltip": "ä»Šã™ãã‚­ãƒ£ãƒ—ãƒãƒ£  Â·  Win+Shift+C",
+    "pause_tooltip": "ä¸€æ™‚åœæ­¢  Â·  Win+Shift+P",
+    "stop_tooltip": "éŒ²ç”»åœæ­¢  Â·  Win+Shift+S",
+    "resume_tooltip": "å†é–‹  Â·  Win+Shift+P",
+    "open_folder_tooltip": "ã‚»ãƒƒã‚·ãƒ§ãƒ³ãƒ•ã‚©ãƒ«ãƒ€ã‚’é–‹ã",
+    "settings_tooltip": "è¨­å®š"
   },
   "home": {
-    "tagline": "「開始」をクリックするか、Win+Shift+Rを押して録画を開始してください。",
-    "status_recording": "● 録画中", "status_paused": "⏸ 一時停止",
-    "live_step_count_one": "1 ステップキャプチャ済み", "live_step_count_other": "{{count}} ステップキャプチャ済み",
-    "waiting": "次のウィンドウ変更を待機中...",
-    "paused_hint": "キャプチャが一時停止中です。再開するには「再開」を押してください。",
-    "last_step": "最後のステップ: #{{seq}}"
+    "tagline": "ã€Œé–‹å§‹ã€ã‚’ã‚¯ãƒªãƒƒã‚¯ã™ã‚‹ã‹ã€Win+Shift+Rã‚’æŠ¼ã—ã¦éŒ²ç”»ã‚’é–‹å§‹ã—ã¦ãã ã•ã„ã€‚",
+    "status_recording": "â— éŒ²ç”»ä¸­", "status_paused": "â¸ ä¸€æ™‚åœæ­¢",
+    "live_step_count_one": "1 ã‚¹ãƒ†ãƒƒãƒ—ã‚­ãƒ£ãƒ—ãƒãƒ£æ¸ˆã¿", "live_step_count_other": "{{count}} ã‚¹ãƒ†ãƒƒãƒ—ã‚­ãƒ£ãƒ—ãƒãƒ£æ¸ˆã¿",
+    "waiting": "æ¬¡ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦å¤‰æ›´ã‚’å¾…æ©Ÿä¸­...",
+    "paused_hint": "ã‚­ãƒ£ãƒ—ãƒãƒ£ãŒä¸€æ™‚åœæ­¢ä¸­ã§ã™ã€‚å†é–‹ã™ã‚‹ã«ã¯ã€Œå†é–‹ã€ã‚’æŠ¼ã—ã¦ãã ã•ã„ã€‚",
+    "last_step": "æœ€å¾Œã®ã‚¹ãƒ†ãƒƒãƒ—: #{{seq}}"
   },
   "review": {
-    "title": "セッションレビュー",
-    "step_count": "{{count}} ステップ", "step_count_plural": "{{count}} ステップ",
-    "duration": "{{min}}分 {{sec}}秒",
-    "export": "エクスポート", "export_disabled_title": "エクスポートするステップがありません",
-    "export_title": "セッションをエクスポート",
-    "empty_title": "キャプチャされたステップなし",
-    "empty_hint": "このセッションではフォーカスの変更が検出されませんでした。新しい録画を開始して (Win+Shift+R)、ウィンドウを切り替えてステップをキャプチャしてください。"
+    "title": "ã‚»ãƒƒã‚·ãƒ§ãƒ³ãƒ¬ãƒ“ãƒ¥ãƒ¼",
+    "step_count": "{{count}} ã‚¹ãƒ†ãƒƒãƒ—", "step_count_plural": "{{count}} ã‚¹ãƒ†ãƒƒãƒ—",
+    "duration": "{{min}}åˆ† {{sec}}ç§’",
+    "export": "ã‚¨ã‚¯ã‚¹ãƒãƒ¼ãƒˆ", "export_disabled_title": "ã‚¨ã‚¯ã‚¹ãƒãƒ¼ãƒˆã™ã‚‹ã‚¹ãƒ†ãƒƒãƒ—ãŒã‚ã‚Šã¾ã›ã‚“",
+    "export_title": "ã‚»ãƒƒã‚·ãƒ§ãƒ³ã‚’ã‚¨ã‚¯ã‚¹ãƒãƒ¼ãƒˆ",
+    "empty_title": "ã‚­ãƒ£ãƒ—ãƒãƒ£ã•ã‚ŒãŸã‚¹ãƒ†ãƒƒãƒ—ãªã—",
+    "empty_hint": "ã“ã®ã‚»ãƒƒã‚·ãƒ§ãƒ³ã§ã¯ãƒ•ã‚©ãƒ¼ã‚«ã‚¹ã®å¤‰æ›´ãŒæ¤œå‡ºã•ã‚Œã¾ã›ã‚“ã§ã—ãŸã€‚æ–°ã—ã„éŒ²ç”»ã‚’é–‹å§‹ã—ã¦ (Win+Shift+R)ã€ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’åˆ‡ã‚Šæ›¿ãˆã¦ã‚¹ãƒ†ãƒƒãƒ—ã‚’ã‚­ãƒ£ãƒ—ãƒãƒ£ã—ã¦ãã ã•ã„ã€‚"
   },
   "export": {
-    "title": "セッションをエクスポート (Markdown)",
-    "embed_images": "画像をbase64で埋め込む (AIに推奨)",
-    "filename_label": "ファイル名 (拡張子なし)",
+    "title": "ã‚»ãƒƒã‚·ãƒ§ãƒ³ã‚’ã‚¨ã‚¯ã‚¹ãƒãƒ¼ãƒˆ (Markdown)",
+    "embed_images": "ç”»åƒã‚’base64ã§åŸ‹ã‚è¾¼ã‚€ (AIã«æŽ¨å¥¨)",
+    "filename_label": "ãƒ•ã‚¡ã‚¤ãƒ«å (æ‹¡å¼µå­ãªã—)",
     "filename_placeholder": "my_export",
-    "folder_label": "保存先フォルダ", "folder_placeholder": "「選択...」をクリック",
-    "choose_folder": "選択...", "choose_folder_dialog": "保存先フォルダを選択",
-    "cancel": "キャンセル", "exporting": "エクスポート中...", "export": "エクスポート",
-    "error_no_folder": "保存先フォルダを選択してください。",
-    "error_no_filename": "ファイル名を入力してください。"
+    "folder_label": "ä¿å­˜å…ˆãƒ•ã‚©ãƒ«ãƒ€", "folder_placeholder": "ã€Œé¸æŠž...ã€ã‚’ã‚¯ãƒªãƒƒã‚¯",
+    "choose_folder": "é¸æŠž...", "choose_folder_dialog": "ä¿å­˜å…ˆãƒ•ã‚©ãƒ«ãƒ€ã‚’é¸æŠž",
+    "cancel": "ã‚­ãƒ£ãƒ³ã‚»ãƒ«", "exporting": "ã‚¨ã‚¯ã‚¹ãƒãƒ¼ãƒˆä¸­...", "export": "ã‚¨ã‚¯ã‚¹ãƒãƒ¼ãƒˆ",
+    "error_no_folder": "ä¿å­˜å…ˆãƒ•ã‚©ãƒ«ãƒ€ã‚’é¸æŠžã—ã¦ãã ã•ã„ã€‚",
+    "error_no_filename": "ãƒ•ã‚¡ã‚¤ãƒ«åã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚"
   },
   "settings": {
-    "title": "設定", "sessions_dir_label": "セッションフォルダ",
-    "sessions_dir_open": "開く",
-    "export_template_label": "エクスポート名テンプレート",
-    "export_template_hint": "プレースホルダー: {yyyy} {MM} {dd} {HH} {mm} {ss}",
-    "auto_purge_label": "セッションを自動削除する期間 (時間、0 = しない)",
-    "image_quality_label": "画像品質",
-    "quality_high": "高", "quality_medium": "中", "quality_low": "低",
-    "embed_images_label": "デフォルトでMarkdownに画像をbase64で埋め込む",
-    "hotkeys_label": "ホットキー",
-    "hotkeys_display": "開始: {{start}} · 一時停止: {{pause}} · 停止: {{stop}} · 注釈: {{annotate}} · キャプチャ: {{capture}}",
-    "language_label": "言語", "save": "保存", "cancel": "キャンセル",
-    "restore_defaults": "デフォルトに戻す"
+    "title": "è¨­å®š", "sessions_dir_label": "ã‚»ãƒƒã‚·ãƒ§ãƒ³ãƒ•ã‚©ãƒ«ãƒ€",
+    "sessions_dir_open": "é–‹ã",
+    "export_template_label": "ã‚¨ã‚¯ã‚¹ãƒãƒ¼ãƒˆåãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆ",
+    "export_template_hint": "ãƒ—ãƒ¬ãƒ¼ã‚¹ãƒ›ãƒ«ãƒ€ãƒ¼: {yyyy} {MM} {dd} {HH} {mm} {ss}",
+    "auto_purge_label": "ã‚»ãƒƒã‚·ãƒ§ãƒ³ã‚’è‡ªå‹•å‰Šé™¤ã™ã‚‹æœŸé–“ (æ™‚é–“ã€0 = ã—ãªã„)",
+    "image_quality_label": "ç”»åƒå“è³ª",
+    "quality_high": "é«˜", "quality_medium": "ä¸­", "quality_low": "ä½Ž",
+    "embed_images_label": "ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã§Markdownã«ç”»åƒã‚’base64ã§åŸ‹ã‚è¾¼ã‚€",
+    "hotkeys_label": "ãƒ›ãƒƒãƒˆã‚­ãƒ¼",
+    "hotkeys_display": "é–‹å§‹: {{start}} Â· ä¸€æ™‚åœæ­¢: {{pause}} Â· åœæ­¢: {{stop}} Â· æ³¨é‡ˆ: {{annotate}} Â· ã‚­ãƒ£ãƒ—ãƒãƒ£: {{capture}}",
+    "language_label": "è¨€èªž", "save": "ä¿å­˜", "cancel": "ã‚­ãƒ£ãƒ³ã‚»ãƒ«",
+    "restore_defaults": "ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã«æˆ»ã™"
   },
   "stepcard": {
-    "click_badge": "クリック", "mark_point_hint": "画像をクリック...", "mark_point": "ポイントをマーク",
-    "spotlight_hint": "ドラッグして選択...", "spotlight": "スポットライト",
-    "remove_spotlight": "スポットライトを削除", "crop_hint": "ドラッグしてトリミング...", "crop": "画像をトリミング",
-    "delete": "ステップを削除", "log_header": "📋 ログ · {{timestamp}}", "remove_log": "ログを削除",
-    "log_note_placeholder": "このログについてのメモ...", "save": "保存", "cancel": "キャンセル",
-    "edit_note": "メモを編集", "add_note": "メモを追加",
-    "annotation_placeholder": "注釈を追加...", "clear": "クリア", "edit": "編集", "annotate": "注釈"
+    "click_badge": "ã‚¯ãƒªãƒƒã‚¯", "mark_point_hint": "ç”»åƒã‚’ã‚¯ãƒªãƒƒã‚¯...", "mark_point": "ãƒã‚¤ãƒ³ãƒˆã‚’ãƒžãƒ¼ã‚¯",
+    "spotlight_hint": "ãƒ‰ãƒ©ãƒƒã‚°ã—ã¦é¸æŠž...", "spotlight": "ã‚¹ãƒãƒƒãƒˆãƒ©ã‚¤ãƒˆ",
+    "remove_spotlight": "ã‚¹ãƒãƒƒãƒˆãƒ©ã‚¤ãƒˆã‚’å‰Šé™¤", "crop_hint": "ãƒ‰ãƒ©ãƒƒã‚°ã—ã¦ãƒˆãƒªãƒŸãƒ³ã‚°...", "crop": "ç”»åƒã‚’ãƒˆãƒªãƒŸãƒ³ã‚°", "duplicate": "Duplicate step",
+    "delete": "ã‚¹ãƒ†ãƒƒãƒ—ã‚’å‰Šé™¤", "log_header": "ðŸ“‹ ãƒ­ã‚° Â· {{timestamp}}", "remove_log": "ãƒ­ã‚°ã‚’å‰Šé™¤",
+    "log_note_placeholder": "ã“ã®ãƒ­ã‚°ã«ã¤ã„ã¦ã®ãƒ¡ãƒ¢...", "save": "ä¿å­˜", "cancel": "ã‚­ãƒ£ãƒ³ã‚»ãƒ«",
+    "edit_note": "ãƒ¡ãƒ¢ã‚’ç·¨é›†", "add_note": "ãƒ¡ãƒ¢ã‚’è¿½åŠ ",
+    "annotation_placeholder": "æ³¨é‡ˆã‚’è¿½åŠ ...", "clear": "ã‚¯ãƒªã‚¢", "edit": "ç·¨é›†", "annotate": "æ³¨é‡ˆ"
   },
   "live_feed": {
-    "title": "ライブキャプチャ", "step_count_one": "1 ステップ", "step_count_other": "{{count}} ステップ",
-    "waiting": "次のウィンドウ変更を待機中..."
+    "title": "ãƒ©ã‚¤ãƒ–ã‚­ãƒ£ãƒ—ãƒãƒ£", "step_count_one": "1 ã‚¹ãƒ†ãƒƒãƒ—", "step_count_other": "{{count}} ã‚¹ãƒ†ãƒƒãƒ—",
+    "waiting": "æ¬¡ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦å¤‰æ›´ã‚’å¾…æ©Ÿä¸­..."
   },
   "sessions_list": {
-    "title": "最近のセッション",
-    "empty": "保存されたセッションがありません。(設定した時間後にセッションは削除されます)",
-    "step_count": "{{count}} ステップ", "open": "開く", "delete": "削除"
+    "title": "æœ€è¿‘ã®ã‚»ãƒƒã‚·ãƒ§ãƒ³",
+    "empty": "ä¿å­˜ã•ã‚ŒãŸã‚»ãƒƒã‚·ãƒ§ãƒ³ãŒã‚ã‚Šã¾ã›ã‚“ã€‚(è¨­å®šã—ãŸæ™‚é–“å¾Œã«ã‚»ãƒƒã‚·ãƒ§ãƒ³ã¯å‰Šé™¤ã•ã‚Œã¾ã™)",
+    "step_count": "{{count}} ã‚¹ãƒ†ãƒƒãƒ—", "open": "é–‹ã", "delete": "å‰Šé™¤"
   },
-  "step_preview": { "title": "ステップ #{{seq}}", "alt": "ステップ {{seq}}" },
+  "step_preview": { "title": "ã‚¹ãƒ†ãƒƒãƒ— #{{seq}}", "alt": "ã‚¹ãƒ†ãƒƒãƒ— {{seq}}" },
   "toasts": {
-    "capture_blocked_title": "キャプチャが実行されませんでした",
-    "capture_blocked_body": "ターゲットウィンドウに切り替えてから再試行してください。",
-    "session_deleted": "セッションを削除しました", "export_done": "エクスポート完了",
-    "open_folder": "フォルダを開く", "export_failed": "エクスポート失敗", "settings_saved": "設定を保存しました"
+    "capture_blocked_title": "ã‚­ãƒ£ãƒ—ãƒãƒ£ãŒå®Ÿè¡Œã•ã‚Œã¾ã›ã‚“ã§ã—ãŸ",
+    "capture_blocked_body": "ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã«åˆ‡ã‚Šæ›¿ãˆã¦ã‹ã‚‰å†è©¦è¡Œã—ã¦ãã ã•ã„ã€‚",
+    "session_deleted": "ã‚»ãƒƒã‚·ãƒ§ãƒ³ã‚’å‰Šé™¤ã—ã¾ã—ãŸ", "export_done": "ã‚¨ã‚¯ã‚¹ãƒãƒ¼ãƒˆå®Œäº†",
+    "open_folder": "ãƒ•ã‚©ãƒ«ãƒ€ã‚’é–‹ã", "export_failed": "ã‚¨ã‚¯ã‚¹ãƒãƒ¼ãƒˆå¤±æ•—", "settings_saved": "è¨­å®šã‚’ä¿å­˜ã—ã¾ã—ãŸ"
   },
   "language": {
-    "selector_label": "言語", "en": "English", "pt-BR": "Português (Brasil)", "es": "Español",
-    "ru": "Русский", "it": "Italiano", "de": "Deutsch", "ja": "日本語", "zh-CN": "中文 (简体)", "fr": "Français"
+    "selector_label": "è¨€èªž", "en": "English", "pt-BR": "PortuguÃªs (Brasil)", "es": "EspaÃ±ol",
+    "ru": "Ð ÑƒÑÑÐºÐ¸Ð¹", "it": "Italiano", "de": "Deutsch", "ja": "æ—¥æœ¬èªž", "zh-CN": "ä¸­æ–‡ (ç®€ä½“)", "fr": "FranÃ§ais"
   },
   "errors": {
-    "no_active_session": "アクティブなセッションがありません", "session_already_active": "セッションは既にアクティブです",
-    "session_not_recording": "セッションは録画中ではありません", "session_not_paused": "セッションは一時停止中ではありません",
-    "step_not_found": "ステップが見つかりません", "not_recording": "録画していません",
-    "no_foreground_window": "ターゲットウィンドウが見つかりません。最初に目的のウィンドウに切り替えてください。",
-    "pdf_removed": "PDFエクスポートは削除されました。Markdownを使用してください。"
+    "no_active_session": "ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ãªã‚»ãƒƒã‚·ãƒ§ãƒ³ãŒã‚ã‚Šã¾ã›ã‚“", "session_already_active": "ã‚»ãƒƒã‚·ãƒ§ãƒ³ã¯æ—¢ã«ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã§ã™",
+    "session_not_recording": "ã‚»ãƒƒã‚·ãƒ§ãƒ³ã¯éŒ²ç”»ä¸­ã§ã¯ã‚ã‚Šã¾ã›ã‚“", "session_not_paused": "ã‚»ãƒƒã‚·ãƒ§ãƒ³ã¯ä¸€æ™‚åœæ­¢ä¸­ã§ã¯ã‚ã‚Šã¾ã›ã‚“",
+    "step_not_found": "ã‚¹ãƒ†ãƒƒãƒ—ãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“", "not_recording": "éŒ²ç”»ã—ã¦ã„ã¾ã›ã‚“",
+    "no_foreground_window": "ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ã€‚æœ€åˆã«ç›®çš„ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã«åˆ‡ã‚Šæ›¿ãˆã¦ãã ã•ã„ã€‚",
+    "create_dir_failed": "ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã®ä½œæˆã«å¤±æ•—ã—ã¾ã—ãŸ: {{message}}",
+    "copy_image_failed": "ç”»åƒã®ã‚³ãƒ”ãƒ¼ã«å¤±æ•—ã—ã¾ã—ãŸ: {{message}}",
+    "capture_failed": "ã‚­ãƒ£ãƒ—ãƒãƒ£ã«å¤±æ•—ã—ã¾ã—ãŸã€‚",
+    "pdf_removed": "PDFã‚¨ã‚¯ã‚¹ãƒãƒ¼ãƒˆã¯å‰Šé™¤ã•ã‚Œã¾ã—ãŸã€‚Markdownã‚’ä½¿ç”¨ã—ã¦ãã ã•ã„ã€‚"
   }
 }
+

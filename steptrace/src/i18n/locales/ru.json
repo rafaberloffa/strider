@@ -1,97 +1,101 @@
-{
+﻿{
   "app": { "name": "Strider" },
-  "status": { "idle": "Готов", "recording": "● Запись", "paused": "⏸ Пауза" },
+  "status": { "idle": "Ð“Ð¾Ñ‚Ð¾Ð²", "recording": "â— Ð—Ð°Ð¿Ð¸ÑÑŒ", "paused": "â¸ ÐŸÐ°ÑƒÐ·Ð°" },
   "session": {
-    "start": "Начать", "pause": "Пауза", "resume": "Продолжить", "stop": "Остановить",
-    "capture_now": "Захват", "back": "← Назад",
-    "step_singular": "шаг", "step_plural": "шагов",
-    "step_count": "{{count}} шаг", "step_count_plural": "{{count}} шагов"
+    "start": "ÐÐ°Ñ‡Ð°Ñ‚ÑŒ", "pause": "ÐŸÐ°ÑƒÐ·Ð°", "resume": "ÐŸÑ€Ð¾Ð´Ð¾Ð»Ð¶Ð¸Ñ‚ÑŒ", "stop": "ÐžÑÑ‚Ð°Ð½Ð¾Ð²Ð¸Ñ‚ÑŒ",
+    "capture_now": "Ð—Ð°Ñ…Ð²Ð°Ñ‚", "back": "â† ÐÐ°Ð·Ð°Ð´",
+    "step_singular": "ÑˆÐ°Ð³", "step_plural": "ÑˆÐ°Ð³Ð¾Ð²",
+    "step_count": "{{count}} ÑˆÐ°Ð³", "step_count_plural": "{{count}} ÑˆÐ°Ð³Ð¾Ð²"
   },
   "toolbar": {
-    "start_tooltip": "Начать запись  ·  Win+Shift+R",
-    "capture_tooltip": "Захват сейчас  ·  Win+Shift+C",
-    "pause_tooltip": "Пауза  ·  Win+Shift+P",
-    "stop_tooltip": "Остановить запись  ·  Win+Shift+S",
-    "resume_tooltip": "Продолжить  ·  Win+Shift+P",
-    "open_folder_tooltip": "Открыть папку сессий",
-    "settings_tooltip": "Настройки"
+    "start_tooltip": "ÐÐ°Ñ‡Ð°Ñ‚ÑŒ Ð·Ð°Ð¿Ð¸ÑÑŒ  Â·  Win+Shift+R",
+    "capture_tooltip": "Ð—Ð°Ñ…Ð²Ð°Ñ‚ ÑÐµÐ¹Ñ‡Ð°Ñ  Â·  Win+Shift+C",
+    "pause_tooltip": "ÐŸÐ°ÑƒÐ·Ð°  Â·  Win+Shift+P",
+    "stop_tooltip": "ÐžÑÑ‚Ð°Ð½Ð¾Ð²Ð¸Ñ‚ÑŒ Ð·Ð°Ð¿Ð¸ÑÑŒ  Â·  Win+Shift+S",
+    "resume_tooltip": "ÐŸÑ€Ð¾Ð´Ð¾Ð»Ð¶Ð¸Ñ‚ÑŒ  Â·  Win+Shift+P",
+    "open_folder_tooltip": "ÐžÑ‚ÐºÑ€Ñ‹Ñ‚ÑŒ Ð¿Ð°Ð¿ÐºÑƒ ÑÐµÑÑÐ¸Ð¹",
+    "settings_tooltip": "ÐÐ°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸"
   },
   "home": {
-    "tagline": "Нажмите «Начать» или Win+Shift+R для записи.",
-    "status_recording": "● Запись", "status_paused": "⏸ Пауза",
-    "live_step_count_one": "1 шаг захвачен", "live_step_count_other": "{{count}} шагов захвачено",
-    "waiting": "Ожидание следующего переключения окна...",
-    "paused_hint": "Захват на паузе. Продолжите для записи.",
-    "last_step": "Последний шаг: #{{seq}}"
+    "tagline": "ÐÐ°Ð¶Ð¼Ð¸Ñ‚Ðµ Â«ÐÐ°Ñ‡Ð°Ñ‚ÑŒÂ» Ð¸Ð»Ð¸ Win+Shift+R Ð´Ð»Ñ Ð·Ð°Ð¿Ð¸ÑÐ¸.",
+    "status_recording": "â— Ð—Ð°Ð¿Ð¸ÑÑŒ", "status_paused": "â¸ ÐŸÐ°ÑƒÐ·Ð°",
+    "live_step_count_one": "1 ÑˆÐ°Ð³ Ð·Ð°Ñ…Ð²Ð°Ñ‡ÐµÐ½", "live_step_count_other": "{{count}} ÑˆÐ°Ð³Ð¾Ð² Ð·Ð°Ñ…Ð²Ð°Ñ‡ÐµÐ½Ð¾",
+    "waiting": "ÐžÐ¶Ð¸Ð´Ð°Ð½Ð¸Ðµ ÑÐ»ÐµÐ´ÑƒÑŽÑ‰ÐµÐ³Ð¾ Ð¿ÐµÑ€ÐµÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ñ Ð¾ÐºÐ½Ð°...",
+    "paused_hint": "Ð—Ð°Ñ…Ð²Ð°Ñ‚ Ð½Ð° Ð¿Ð°ÑƒÐ·Ðµ. ÐŸÑ€Ð¾Ð´Ð¾Ð»Ð¶Ð¸Ñ‚Ðµ Ð´Ð»Ñ Ð·Ð°Ð¿Ð¸ÑÐ¸.",
+    "last_step": "ÐŸÐ¾ÑÐ»ÐµÐ´Ð½Ð¸Ð¹ ÑˆÐ°Ð³: #{{seq}}"
   },
   "review": {
-    "title": "Обзор сессии",
-    "step_count": "{{count}} шаг", "step_count_plural": "{{count}} шагов",
-    "duration": "{{min}}мин {{sec}}с",
-    "export": "Экспорт", "export_disabled_title": "Нет шагов для экспорта",
-    "export_title": "Экспорт сессии",
-    "empty_title": "Шаги не захвачены",
-    "empty_hint": "В этой сессии не было обнаружено переключений фокуса. Начните новую запись (Win+Shift+R) и переключайтесь между окнами."
+    "title": "ÐžÐ±Ð·Ð¾Ñ€ ÑÐµÑÑÐ¸Ð¸",
+    "step_count": "{{count}} ÑˆÐ°Ð³", "step_count_plural": "{{count}} ÑˆÐ°Ð³Ð¾Ð²",
+    "duration": "{{min}}Ð¼Ð¸Ð½ {{sec}}Ñ",
+    "export": "Ð­ÐºÑÐ¿Ð¾Ñ€Ñ‚", "export_disabled_title": "ÐÐµÑ‚ ÑˆÐ°Ð³Ð¾Ð² Ð´Ð»Ñ ÑÐºÑÐ¿Ð¾Ñ€Ñ‚Ð°",
+    "export_title": "Ð­ÐºÑÐ¿Ð¾Ñ€Ñ‚ ÑÐµÑÑÐ¸Ð¸",
+    "empty_title": "Ð¨Ð°Ð³Ð¸ Ð½Ðµ Ð·Ð°Ñ…Ð²Ð°Ñ‡ÐµÐ½Ñ‹",
+    "empty_hint": "Ð’ ÑÑ‚Ð¾Ð¹ ÑÐµÑÑÐ¸Ð¸ Ð½Ðµ Ð±Ñ‹Ð»Ð¾ Ð¾Ð±Ð½Ð°Ñ€ÑƒÐ¶ÐµÐ½Ð¾ Ð¿ÐµÑ€ÐµÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ð¹ Ñ„Ð¾ÐºÑƒÑÐ°. ÐÐ°Ñ‡Ð½Ð¸Ñ‚Ðµ Ð½Ð¾Ð²ÑƒÑŽ Ð·Ð°Ð¿Ð¸ÑÑŒ (Win+Shift+R) Ð¸ Ð¿ÐµÑ€ÐµÐºÐ»ÑŽÑ‡Ð°Ð¹Ñ‚ÐµÑÑŒ Ð¼ÐµÐ¶Ð´Ñƒ Ð¾ÐºÐ½Ð°Ð¼Ð¸."
   },
   "export": {
-    "title": "Экспорт сессии (Markdown)",
-    "embed_images": "Встроить изображения в base64 (рекомендуется для ИИ)",
-    "filename_label": "Имя файла (без расширения)",
-    "filename_placeholder": "мой_экспорт",
-    "folder_label": "Папка назначения", "folder_placeholder": "Нажмите «Выбрать...»",
-    "choose_folder": "Выбрать...", "choose_folder_dialog": "Выберите папку назначения",
-    "cancel": "Отмена", "exporting": "Экспорт...", "export": "Экспорт",
-    "error_no_folder": "Выберите папку назначения.",
-    "error_no_filename": "Введите имя файла."
+    "title": "Ð­ÐºÑÐ¿Ð¾Ñ€Ñ‚ ÑÐµÑÑÐ¸Ð¸ (Markdown)",
+    "embed_images": "Ð’ÑÑ‚Ñ€Ð¾Ð¸Ñ‚ÑŒ Ð¸Ð·Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ñ Ð² base64 (Ñ€ÐµÐºÐ¾Ð¼ÐµÐ½Ð´ÑƒÐµÑ‚ÑÑ Ð´Ð»Ñ Ð˜Ð˜)",
+    "filename_label": "Ð˜Ð¼Ñ Ñ„Ð°Ð¹Ð»Ð° (Ð±ÐµÐ· Ñ€Ð°ÑÑˆÐ¸Ñ€ÐµÐ½Ð¸Ñ)",
+    "filename_placeholder": "Ð¼Ð¾Ð¹_ÑÐºÑÐ¿Ð¾Ñ€Ñ‚",
+    "folder_label": "ÐŸÐ°Ð¿ÐºÐ° Ð½Ð°Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ", "folder_placeholder": "ÐÐ°Ð¶Ð¼Ð¸Ñ‚Ðµ Â«Ð’Ñ‹Ð±Ñ€Ð°Ñ‚ÑŒ...Â»",
+    "choose_folder": "Ð’Ñ‹Ð±Ñ€Ð°Ñ‚ÑŒ...", "choose_folder_dialog": "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð¿Ð°Ð¿ÐºÑƒ Ð½Ð°Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ",
+    "cancel": "ÐžÑ‚Ð¼ÐµÐ½Ð°", "exporting": "Ð­ÐºÑÐ¿Ð¾Ñ€Ñ‚...", "export": "Ð­ÐºÑÐ¿Ð¾Ñ€Ñ‚",
+    "error_no_folder": "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð¿Ð°Ð¿ÐºÑƒ Ð½Ð°Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ.",
+    "error_no_filename": "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ Ñ„Ð°Ð¹Ð»Ð°."
   },
   "settings": {
-    "title": "Настройки", "sessions_dir_label": "Папка сессий",
-    "sessions_dir_open": "Открыть",
-    "export_template_label": "Шаблон имени экспорта",
-    "export_template_hint": "Плейсхолдеры: {yyyy} {MM} {dd} {HH} {mm} {ss}",
-    "auto_purge_label": "Автоудаление сессий через (часов, 0 = никогда)",
-    "image_quality_label": "Качество изображения",
-    "quality_high": "Высокое", "quality_medium": "Среднее", "quality_low": "Низкое",
-    "embed_images_label": "Встраивать изображения в base64 по умолчанию в Markdown",
-    "hotkeys_label": "Горячие клавиши",
-    "hotkeys_display": "Начать: {{start}} · Пауза: {{pause}} · Стоп: {{stop}} · Аннотация: {{annotate}} · Захват: {{capture}}",
-    "language_label": "Язык", "save": "Сохранить", "cancel": "Отмена",
-    "restore_defaults": "Восстановить по умолчанию"
+    "title": "ÐÐ°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸", "sessions_dir_label": "ÐŸÐ°Ð¿ÐºÐ° ÑÐµÑÑÐ¸Ð¹",
+    "sessions_dir_open": "ÐžÑ‚ÐºÑ€Ñ‹Ñ‚ÑŒ",
+    "export_template_label": "Ð¨Ð°Ð±Ð»Ð¾Ð½ Ð¸Ð¼ÐµÐ½Ð¸ ÑÐºÑÐ¿Ð¾Ñ€Ñ‚Ð°",
+    "export_template_hint": "ÐŸÐ»ÐµÐ¹ÑÑ…Ð¾Ð»Ð´ÐµÑ€Ñ‹: {yyyy} {MM} {dd} {HH} {mm} {ss}",
+    "auto_purge_label": "ÐÐ²Ñ‚Ð¾ÑƒÐ´Ð°Ð»ÐµÐ½Ð¸Ðµ ÑÐµÑÑÐ¸Ð¹ Ñ‡ÐµÑ€ÐµÐ· (Ñ‡Ð°ÑÐ¾Ð², 0 = Ð½Ð¸ÐºÐ¾Ð³Ð´Ð°)",
+    "image_quality_label": "ÐšÐ°Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¸Ð·Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ñ",
+    "quality_high": "Ð’Ñ‹ÑÐ¾ÐºÐ¾Ðµ", "quality_medium": "Ð¡Ñ€ÐµÐ´Ð½ÐµÐµ", "quality_low": "ÐÐ¸Ð·ÐºÐ¾Ðµ",
+    "embed_images_label": "Ð’ÑÑ‚Ñ€Ð°Ð¸Ð²Ð°Ñ‚ÑŒ Ð¸Ð·Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ñ Ð² base64 Ð¿Ð¾ ÑƒÐ¼Ð¾Ð»Ñ‡Ð°Ð½Ð¸ÑŽ Ð² Markdown",
+    "hotkeys_label": "Ð“Ð¾Ñ€ÑÑ‡Ð¸Ðµ ÐºÐ»Ð°Ð²Ð¸ÑˆÐ¸",
+    "hotkeys_display": "ÐÐ°Ñ‡Ð°Ñ‚ÑŒ: {{start}} Â· ÐŸÐ°ÑƒÐ·Ð°: {{pause}} Â· Ð¡Ñ‚Ð¾Ð¿: {{stop}} Â· ÐÐ½Ð½Ð¾Ñ‚Ð°Ñ†Ð¸Ñ: {{annotate}} Â· Ð—Ð°Ñ…Ð²Ð°Ñ‚: {{capture}}",
+    "language_label": "Ð¯Ð·Ñ‹Ðº", "save": "Ð¡Ð¾Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÑŒ", "cancel": "ÐžÑ‚Ð¼ÐµÐ½Ð°",
+    "restore_defaults": "Ð’Ð¾ÑÑÑ‚Ð°Ð½Ð¾Ð²Ð¸Ñ‚ÑŒ Ð¿Ð¾ ÑƒÐ¼Ð¾Ð»Ñ‡Ð°Ð½Ð¸ÑŽ"
   },
   "stepcard": {
-    "click_badge": "клик", "mark_point_hint": "Кликните на изображение...", "mark_point": "Отметить точку",
-    "spotlight_hint": "Перетащите для выбора...", "spotlight": "Spotlight",
-    "remove_spotlight": "Убрать spotlight", "crop_hint": "Перетащите для обрезки...", "crop": "Обрезать изображение",
-    "delete": "Удалить шаг", "log_header": "📋 Лог · {{timestamp}}", "remove_log": "Удалить лог",
-    "log_note_placeholder": "Заметка об этом логе...", "save": "Сохранить", "cancel": "Отмена",
-    "edit_note": "Изменить заметку", "add_note": "Добавить заметку",
-    "annotation_placeholder": "Добавить аннотацию...", "clear": "Очистить", "edit": "Изменить", "annotate": "Аннотировать"
+    "click_badge": "ÐºÐ»Ð¸Ðº", "mark_point_hint": "ÐšÐ»Ð¸ÐºÐ½Ð¸Ñ‚Ðµ Ð½Ð° Ð¸Ð·Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ðµ...", "mark_point": "ÐžÑ‚Ð¼ÐµÑ‚Ð¸Ñ‚ÑŒ Ñ‚Ð¾Ñ‡ÐºÑƒ",
+    "spotlight_hint": "ÐŸÐµÑ€ÐµÑ‚Ð°Ñ‰Ð¸Ñ‚Ðµ Ð´Ð»Ñ Ð²Ñ‹Ð±Ð¾Ñ€Ð°...", "spotlight": "Spotlight",
+    "remove_spotlight": "Ð£Ð±Ñ€Ð°Ñ‚ÑŒ spotlight", "crop_hint": "ÐŸÐµÑ€ÐµÑ‚Ð°Ñ‰Ð¸Ñ‚Ðµ Ð´Ð»Ñ Ð¾Ð±Ñ€ÐµÐ·ÐºÐ¸...", "crop": "ÐžÐ±Ñ€ÐµÐ·Ð°Ñ‚ÑŒ Ð¸Ð·Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ðµ", "duplicate": "Duplicate step",
+    "delete": "Ð£Ð´Ð°Ð»Ð¸Ñ‚ÑŒ ÑˆÐ°Ð³", "log_header": "ðŸ“‹ Ð›Ð¾Ð³ Â· {{timestamp}}", "remove_log": "Ð£Ð´Ð°Ð»Ð¸Ñ‚ÑŒ Ð»Ð¾Ð³",
+    "log_note_placeholder": "Ð—Ð°Ð¼ÐµÑ‚ÐºÐ° Ð¾Ð± ÑÑ‚Ð¾Ð¼ Ð»Ð¾Ð³Ðµ...", "save": "Ð¡Ð¾Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÑŒ", "cancel": "ÐžÑ‚Ð¼ÐµÐ½Ð°",
+    "edit_note": "Ð˜Ð·Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ Ð·Ð°Ð¼ÐµÑ‚ÐºÑƒ", "add_note": "Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ Ð·Ð°Ð¼ÐµÑ‚ÐºÑƒ",
+    "annotation_placeholder": "Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ Ð°Ð½Ð½Ð¾Ñ‚Ð°Ñ†Ð¸ÑŽ...", "clear": "ÐžÑ‡Ð¸ÑÑ‚Ð¸Ñ‚ÑŒ", "edit": "Ð˜Ð·Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ", "annotate": "ÐÐ½Ð½Ð¾Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ"
   },
   "live_feed": {
-    "title": "Захват в реальном времени", "step_count_one": "1 шаг", "step_count_other": "{{count}} шагов",
-    "waiting": "Ожидание следующего переключения окна..."
+    "title": "Ð—Ð°Ñ…Ð²Ð°Ñ‚ Ð² Ñ€ÐµÐ°Ð»ÑŒÐ½Ð¾Ð¼ Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸", "step_count_one": "1 ÑˆÐ°Ð³", "step_count_other": "{{count}} ÑˆÐ°Ð³Ð¾Ð²",
+    "waiting": "ÐžÐ¶Ð¸Ð´Ð°Ð½Ð¸Ðµ ÑÐ»ÐµÐ´ÑƒÑŽÑ‰ÐµÐ³Ð¾ Ð¿ÐµÑ€ÐµÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ñ Ð¾ÐºÐ½Ð°..."
   },
   "sessions_list": {
-    "title": "Недавние сессии",
-    "empty": "Сохранённых сессий нет. (сессии удаляются по истечении настроенного времени)",
-    "step_count": "{{count}} шагов", "open": "Открыть", "delete": "Удалить"
+    "title": "ÐÐµÐ´Ð°Ð²Ð½Ð¸Ðµ ÑÐµÑÑÐ¸Ð¸",
+    "empty": "Ð¡Ð¾Ñ…Ñ€Ð°Ð½Ñ‘Ð½Ð½Ñ‹Ñ… ÑÐµÑÑÐ¸Ð¹ Ð½ÐµÑ‚. (ÑÐµÑÑÐ¸Ð¸ ÑƒÐ´Ð°Ð»ÑÑŽÑ‚ÑÑ Ð¿Ð¾ Ð¸ÑÑ‚ÐµÑ‡ÐµÐ½Ð¸Ð¸ Ð½Ð°ÑÑ‚Ñ€Ð¾ÐµÐ½Ð½Ð¾Ð³Ð¾ Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸)",
+    "step_count": "{{count}} ÑˆÐ°Ð³Ð¾Ð²", "open": "ÐžÑ‚ÐºÑ€Ñ‹Ñ‚ÑŒ", "delete": "Ð£Ð´Ð°Ð»Ð¸Ñ‚ÑŒ"
   },
-  "step_preview": { "title": "Шаг #{{seq}}", "alt": "Шаг {{seq}}" },
+  "step_preview": { "title": "Ð¨Ð°Ð³ #{{seq}}", "alt": "Ð¨Ð°Ð³ {{seq}}" },
   "toasts": {
-    "capture_blocked_title": "Захват не выполнен",
-    "capture_blocked_body": "Переключитесь на целевое окно и повторите попытку.",
-    "session_deleted": "Сессия удалена", "export_done": "Экспорт завершён",
-    "open_folder": "Открыть папку", "export_failed": "Ошибка экспорта", "settings_saved": "Настройки сохранены"
+    "capture_blocked_title": "Ð—Ð°Ñ…Ð²Ð°Ñ‚ Ð½Ðµ Ð²Ñ‹Ð¿Ð¾Ð»Ð½ÐµÐ½",
+    "capture_blocked_body": "ÐŸÐµÑ€ÐµÐºÐ»ÑŽÑ‡Ð¸Ñ‚ÐµÑÑŒ Ð½Ð° Ñ†ÐµÐ»ÐµÐ²Ð¾Ðµ Ð¾ÐºÐ½Ð¾ Ð¸ Ð¿Ð¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‚Ðµ Ð¿Ð¾Ð¿Ñ‹Ñ‚ÐºÑƒ.",
+    "session_deleted": "Ð¡ÐµÑÑÐ¸Ñ ÑƒÐ´Ð°Ð»ÐµÐ½Ð°", "export_done": "Ð­ÐºÑÐ¿Ð¾Ñ€Ñ‚ Ð·Ð°Ð²ÐµÑ€ÑˆÑ‘Ð½",
+    "open_folder": "ÐžÑ‚ÐºÑ€Ñ‹Ñ‚ÑŒ Ð¿Ð°Ð¿ÐºÑƒ", "export_failed": "ÐžÑˆÐ¸Ð±ÐºÐ° ÑÐºÑÐ¿Ð¾Ñ€Ñ‚Ð°", "settings_saved": "ÐÐ°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸ ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ñ‹"
   },
   "language": {
-    "selector_label": "Язык", "en": "English", "pt-BR": "Português (Brasil)", "es": "Español",
-    "ru": "Русский", "it": "Italiano", "de": "Deutsch", "ja": "日本語", "zh-CN": "中文 (简体)", "fr": "Français"
+    "selector_label": "Ð¯Ð·Ñ‹Ðº", "en": "English", "pt-BR": "PortuguÃªs (Brasil)", "es": "EspaÃ±ol",
+    "ru": "Ð ÑƒÑÑÐºÐ¸Ð¹", "it": "Italiano", "de": "Deutsch", "ja": "æ—¥æœ¬èªž", "zh-CN": "ä¸­æ–‡ (ç®€ä½“)", "fr": "FranÃ§ais"
   },
   "errors": {
-    "no_active_session": "Нет активной сессии", "session_already_active": "Сессия уже активна",
-    "session_not_recording": "Сессия не записывает", "session_not_paused": "Сессия не на паузе",
-    "step_not_found": "Шаг не найден", "not_recording": "Не записывает",
-    "no_foreground_window": "Целевое окно не найдено. Сначала переключитесь на нужное окно.",
-    "pdf_removed": "Экспорт PDF удалён. Используйте Markdown."
+    "no_active_session": "ÐÐµÑ‚ Ð°ÐºÑ‚Ð¸Ð²Ð½Ð¾Ð¹ ÑÐµÑÑÐ¸Ð¸", "session_already_active": "Ð¡ÐµÑÑÐ¸Ñ ÑƒÐ¶Ðµ Ð°ÐºÑ‚Ð¸Ð²Ð½Ð°",
+    "session_not_recording": "Ð¡ÐµÑÑÐ¸Ñ Ð½Ðµ Ð·Ð°Ð¿Ð¸ÑÑ‹Ð²Ð°ÐµÑ‚", "session_not_paused": "Ð¡ÐµÑÑÐ¸Ñ Ð½Ðµ Ð½Ð° Ð¿Ð°ÑƒÐ·Ðµ",
+    "step_not_found": "Ð¨Ð°Ð³ Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½", "not_recording": "ÐÐµ Ð·Ð°Ð¿Ð¸ÑÑ‹Ð²Ð°ÐµÑ‚",
+    "no_foreground_window": "Ð¦ÐµÐ»ÐµÐ²Ð¾Ðµ Ð¾ÐºÐ½Ð¾ Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½Ð¾. Ð¡Ð½Ð°Ñ‡Ð°Ð»Ð° Ð¿ÐµÑ€ÐµÐºÐ»ÑŽÑ‡Ð¸Ñ‚ÐµÑÑŒ Ð½Ð° Ð½ÑƒÐ¶Ð½Ð¾Ðµ Ð¾ÐºÐ½Ð¾.",
+    "create_dir_failed": "ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ ÑÐ¾Ð·Ð´Ð°Ñ‚ÑŒ ÐºÐ°Ñ‚Ð°Ð»Ð¾Ð³: {{message}}",
+    "copy_image_failed": "ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ ÑÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ð¸Ð·Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ðµ: {{message}}",
+    "capture_failed": "Ð¡Ð±Ð¾Ð¹ Ð·Ð°Ñ…Ð²Ð°Ñ‚Ð°.",
+    "pdf_removed": "Ð­ÐºÑÐ¿Ð¾Ñ€Ñ‚ PDF ÑƒÐ´Ð°Ð»Ñ‘Ð½. Ð˜ÑÐ¿Ð¾Ð»ÑŒÐ·ÑƒÐ¹Ñ‚Ðµ Markdown."
   }
 }
+
